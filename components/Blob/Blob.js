@@ -4,7 +4,7 @@ import vertexShader from "./vertexShader";
 import fragmentShader from "./fragmentShader";
 import { useFrame } from "@react-three/fiber";
 import { MathUtils } from "three";
-import { OrbitControls, useScroll } from "@react-three/drei";
+import { useScroll } from "@react-three/drei";
 import gsap from "gsap";
 
 const Blob = () => {
