@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { nextui } from "@nextui-org/react";
 
 const defaultTheme = require("tailwindcss/defaultTheme");
 
@@ -29,9 +28,7 @@ const config: Config = {
       },
     },
   },
-  // darkMode: "selector",
   plugins: [
-    nextui(),
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

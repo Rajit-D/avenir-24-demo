@@ -2,7 +2,6 @@
 
 import { Canvas } from "@react-three/fiber";
 import Blob from "@/components/Blob/Blob.js";
-import Navbar from "@/components/Navbar/Navbar";
 import { ScrollControls, Scroll } from "@react-three/drei";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import image from "@/assets/logo.png";
@@ -12,7 +11,6 @@ export default function Home() {
   const words = `Enter the realms of multiverse`;
   return (
     <div className="container">
-      <Navbar />
       <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
         <ScrollControls pages={3} damping={0.1}>
           <Blob />
