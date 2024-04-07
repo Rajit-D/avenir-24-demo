@@ -6,16 +6,28 @@ import { ScrollControls, Scroll } from "@react-three/drei";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import image from "@/assets/logo.png";
 import Image from "next/image";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 export default function Home() {
   const words = `Enter the realms of multiverse`;
   return (
-    <div className="h-screen w-screen"> 
+    <div className="h-screen w-screen">
       <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
         <ScrollControls pages={3} damping={0.1}>
           <Blob />
           <Scroll html style={{ width: "100%" }}>
             <div className="h-screen w-screen bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px] flex justify-center items-center">
+              <div className="w-full absolute inset-0 h-screen">
+                <SparklesCore
+                  id="tsparticlesfullpage"
+                  background="transparent"
+                  minSize={0.6}
+                  maxSize={1.4}
+                  particleDensity={100}
+                  className="w-full h-full"
+                  particleColor="#FFFFFF"
+                />
+              </div>
               <div className="text-center">
                 <div className="flex">
                   <h1 className="text-[7em] font-star-wars text-[#cdcbca]">
