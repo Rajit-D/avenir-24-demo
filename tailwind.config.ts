@@ -20,6 +20,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         "star-wars": ["star-wars"],
+        strike: ["strike"],
+        "strike-light": ["strike-light"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

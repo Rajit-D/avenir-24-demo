@@ -4,9 +4,10 @@ import { Canvas } from "@react-three/fiber";
 import Blob from "@/components/Blob/Blob.js";
 import { ScrollControls, Scroll } from "@react-three/drei";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import image from "@/assets/logo.png";
+import image from "@/public/assets/logo.png";
 import Image from "next/image";
 import { SparklesCore } from "@/components/ui/sparkles";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default function Home() {
   const words = `Enter the realms of multiverse`;
@@ -23,7 +24,7 @@ export default function Home() {
                   background="transparent"
                   minSize={0.6}
                   maxSize={1.4}
-                  particleDensity={100}
+                  particleDensity={70}
                   className="w-full h-full"
                   particleColor="#FFFFFF"
                 />

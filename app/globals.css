@@ -4,7 +4,17 @@
 
 @font-face {
   font-family: star-wars;
-  src: url("../assets/starwars.otf");
+  src: url("../public/assets/starwars.otf");
+}
+
+@font-face {
+  font-family: strike;
+  src: url("../public/assets/Squartiqa4FStrike.ttf");
+}
+
+@font-face {
+  font-family: strike-light;
+  src: url("../public/assets/Squartiqa4FUltraLight.ttf");
 }
 
 body {
