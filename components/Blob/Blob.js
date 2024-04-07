@@ -22,8 +22,14 @@ const Blob = () => {
     const updateMesh = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
-      const deno = width < 600 ? 300 : 500;
-      const scaleFactor = Math.min(width, height) / deno;
+      let scaleFactor;
+      if (width < 600) {
+        scaleFactor = Math.min(width, height) / 200;
+      } else if (width >= 600 && width < 1920) {
+        scaleFactor = Math.min(width, height) / 500;
+      } else {
+        scaleFactor = Math.min(width, height) / 800;
+      }
       const newPosition = [0, 0, 0];
 
       mesh.current.scale.set(scaleFactor, scaleFactor, scaleFactor);

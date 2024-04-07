@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Home() {
   const words = `Enter the realms of multiverse`;
   return (
-    <div className="container">
+    <div className="h-screen w-screen"> 
       <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
         <ScrollControls pages={3} damping={0.1}>
           <Blob />
