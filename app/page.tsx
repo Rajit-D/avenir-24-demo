@@ -7,7 +7,6 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import image from "@/public/assets/logo.png";
 import Image from "next/image";
 import { SparklesCore } from "@/components/ui/sparkles";
-import Navbar from "@/components/Navbar/Navbar";
 
 export default function Home() {
   const words = `Enter the realms of multiverse`;
@@ -30,17 +29,16 @@ export default function Home() {
                 />
               </div>
               <div className="text-center">
-                <div className="flex">
-                  <h1 className="text-[7em] font-star-wars text-[#cdcbca]">
+                <div className="flex justify-center items-center">
+                  <h1 className="md:text-[7em] text-[3em] font-star-wars text-[#cdcbca]">
                     A
                   </h1>
                   <Image
                     src={image}
                     alt="Avenir Logo"
-                    width={120}
-                    height={10}
+                    className="md:w-[100px] md:h-[120px] h-[50px] w-[50px]"
                   />
-                  <h1 className="text-[7em] ml-2 font-star-wars text-[#cdcbca]">
+                  <h1 className="md:text-[7em] text-[3em] ml-2 font-star-wars text-[#cdcbca]">
                     ENIR&apos;24
                   </h1>
                 </div>
