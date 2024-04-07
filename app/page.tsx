@@ -36,7 +36,7 @@ export default function Home() {
                   <Image
                     src={image}
                     alt="Avenir Logo"
-                    className="md:w-[100px] md:h-[120px] h-[50px] w-[50px]"
+                    className="md:w-[100px] md:h-[120px] h-[50px] w-[45px]"
                   />
                   <h1 className="md:text-[7em] text-[3em] ml-2 font-star-wars text-[#cdcbca]">
                     ENIR&apos;24

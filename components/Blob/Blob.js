@@ -24,7 +24,7 @@ const Blob = () => {
       const height = window.innerHeight;
       let scaleFactor;
       if (width < 600) {
-        scaleFactor = Math.min(width, height) / 300;
+        scaleFactor = Math.min(width, height) / 350;
       } else if (width >= 600 && width < 1920) {
         scaleFactor = Math.min(width, height) / 500;
       } else {
