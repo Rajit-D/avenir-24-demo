@@ -85,7 +85,7 @@ export default function LandingPage() {
                   {days}
                 </p>
               )}
-              <p className="text-red-500 relative top-[55px] font-strike-light tracking-[7px] left-[7px]">until showtime</p>
+              <p className="text-red-500 text-center relative top-[55px] font-strike-light md:tracking-[7px] md:left-[7px] left-[3.5px]">until showtime</p>
               </div>
               </div>
               <h1 style={{ position: "absolute", top: "100vh" }}>
