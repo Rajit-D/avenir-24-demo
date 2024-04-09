@@ -17,6 +17,11 @@
   src: url("../public/assets/Squartiqa4FUltraLight.ttf");
 }
 
+@font-face {
+  font-family: digital;
+  src: url("../public/assets/Technology.ttf");
+}
+
 body {
   margin: 0;
   padding: 0;

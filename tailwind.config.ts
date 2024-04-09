@@ -22,6 +22,7 @@ const config: Config = {
         "star-wars": ["star-wars"],
         strike: ["strike"],
         "strike-light": ["strike-light"],
+        digital: ["digital"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

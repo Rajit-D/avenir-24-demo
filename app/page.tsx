@@ -7,9 +7,46 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import image from "@/public/assets/logo.png";
 import Image from "next/image";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { useState, useEffect } from "react";
+import Clock from "@/components/Clock/Clock";
 
 export default function Home() {
   const words = `Enter the realms of multiverse`;
+  const [timerDays, setTimerDays] = useState<number>();
+  const [timerHours, setTimerHours] = useState<number>();
+  const [timerMinutes, setTimerMinutes] = useState<number>();
+  const [timerSeconds, setTimerSeconds] = useState<number>();
+  const [completed, setCompleted] = useState<boolean>(false);
+  const [days, setDays] = useState<number>(1);
+
+  let interval: string | number | NodeJS.Timeout;
+
+  const startTimer = () => {
+    const countDownDate = new Date("May 6,2024 ").getTime();
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      const days = Math.floor(distance / (24 * 60 * 60 * 1000));
+      const hours = Math.floor(
+        (distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (60 * 60 * 1000)) / (1000 * 60));
+
+      if (distance < 0) {
+        setCompleted(true);
+        setDays(days * -1);
+        clearInterval(interval);
+      } else {
+        setTimerDays(days);
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+      }
+    });
+  };
+  useEffect(() => {
+    startTimer();
+  });
   return (
     <div className="h-screen w-screen">
       <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
@@ -28,7 +65,8 @@ export default function Home() {
                   particleColor="#FFFFFF"
                 />
               </div>
-              <div className="text-center">
+              <div className="flex justify-center items-center flex-col mt-[100px] border border-red-400">
+                <div className="text-center">
                 <div className="flex justify-center items-center">
                   <h1 className="md:text-[7em] text-[3em] font-star-wars text-[#cdcbca]">
                     A
@@ -43,6 +81,14 @@ export default function Home() {
                   </h1>
                 </div>
                 <TextGenerateEffect words={words} />
+              </div>
+              {!completed ? (
+                <Clock timerDays={timerDays} />
+              ) : (
+                <p className="clock text-purple-600 lg:text-[40px] lg:pl-4 text-[25px] text-center">
+                  {days}
+                </p>
+              )}
               </div>
               <h1 style={{ position: "absolute", top: "100vh" }}>
                 second page

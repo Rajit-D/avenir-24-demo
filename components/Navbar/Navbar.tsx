@@ -40,7 +40,7 @@ function Navbar() {
         </a>
       </div>
       <div
-        className={`menu flex justify-center fixed top-0 left-0 w-screen pt-6 md:w-70 min-h-full md:h-auto md:relative md:bg-none md:backdrop-blur-[0px] bg-[#03001417] backdrop-blur-[8px] md:block ${
+        className={`menu flex justify-center fixed top-0 left-0 w-screen pt-6 md:w-70 min-h-full md:h-auto md:relative md:bg-none md:backdrop-blur-[0px] backdrop-blur-[20px] md:block ${
           !navState ? "hidden" : "flex"
         }`}
       >
