@@ -1,20 +1,19 @@
 import React from "react";
+import './Clock.css';
 
 const Clock = ({ timerDays }) => {
   return (
     <>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center relative top-[80px]">
         <div className="flex p-3">
           <div className="flex justify-center flex-row">
-            <p className="text-[20px] md:text-[60px] text-center font-digital  text-teal-500">
+            <p className="alpha text-[20px] md:text-[60px] text-center font-digital">
               T-&nbsp;
             </p>
-            <p className="text-[20px] md:text-[60px] text-center font-digital  text-teal-500">
+            <p className="alpha text-[20px] md:text-[60px] text-center font-digital">
               {timerDays}
             </p>
-            <div className=" text-sky-600 text-[10px] md:text-[60px] font-digital">
-              Days
-            </div>
+            <div className="alpha text-[10px] md:text-[60px] font-digital">&nbsp;Days</div>
           </div>
         </div>
       </div>
