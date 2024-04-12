@@ -63,8 +63,10 @@ const Blob = () => {
       });
 
       tl.current
-        .to(mesh.current.position, { x: gap }, 1)
-        .to(mesh.current.position, { x: -gap }, 5);
+        .to(mesh.current.position, { x: gap - 1 }, 1)
+        .to(mesh.current.position, { x: -gap + 2 }, 6)
+        .to(mesh.current.position, { x: 0 }, 12)
+        .to(mesh.current.position, { x: 0 }, 18);
     };
 
     updateAnimation();

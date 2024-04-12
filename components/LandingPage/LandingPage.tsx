@@ -46,10 +46,10 @@ export default function LandingPage() {
   return (
     <div className="h-screen w-screen">
       <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
-        <ScrollControls pages={3} damping={0.1}>
+        <ScrollControls pages={5} damping={0.1}>
           <Blob />
           <Scroll html style={{ width: "100%" }}>
-            <div className="bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px] flex justify-center items-center flex-col">
+            <div className="bg-opacity-20 h-full z-2 backdrop-brightness-100 backdrop-blur-[1.7px] flex justify-center items-center flex-col">
               <div className="h-screen w-screen flex justify-center items-center">
                 <div className="w-full absolute inset-0 h-screen">
                   <SparklesCore
@@ -119,6 +119,55 @@ export default function LandingPage() {
                     <div className="flex justify-center items-start flex-col w-1/2 p-[30px] ml-[50px] h-screen">
                       <p className="font-strike text-red-400 text-[30px] pb-7">
                         About the theme
+                      </p>
+                      <p className="font-strike-light text-white">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Autem modi hic, vitae quod eaque, numquam sit beatae
+                        temporibus repudiandae cupiditate animi, dolores
+                        accusamus blanditiis facere fuga fugit repellat.
+                        Assumenda laborum, obcaecati excepturi, aperiam
+                        perferendis ullam veniam corrupti dolorum ratione dicta
+                        esse facere repellendus non. Et dolorem alias fugit
+                        laudantium saepe excepturi sapiente. Provident sint
+                        beatae impedit odit quam architecto enim dicta sed
+                        adipisci fuga totam eligendi nisi earum quisquam
+                        delectus voluptates dignissimos fugiat suscipit maiores
+                        veniam nam, soluta reiciendis aperiam iusto! Ipsam
+                        perferendis incidunt voluptatibus maxime, fugiat
+                        provident, veritatis totam, numquam cupiditate explicabo
+                        natus quos. Beatae nemo temporibus ad rem.
+                      </p>
+                    </div>
+                    <div className=" w-1/2"></div>
+                  </div>
+                </motion.div>
+              </div>
+              <div className="h-screen w-screen flex justify-center items-center">
+                <div className="w-full absolute inset-0 h-screen">
+                  <SparklesCore
+                    id="tsparticlesfullpage"
+                    background="transparent"
+                    minSize={0.6}
+                    maxSize={1.4}
+                    particleDensity={70}
+                    className="w-full h-full"
+                    particleColor="#FFFFFF"
+                  />
+                </div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  // animate={{ opacity: 1, scale: 1 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.2,
+                    ease: [0, 0.71, 0.2, 1.01],
+                  }}
+                >
+                  <div className="flex items-end justify-end flex-row-reverse">
+                    <div className="flex justify-center items-start flex-col w-1/2 p-[30px] ml-[50px] h-screen">
+                      <p className="font-strike text-red-400 text-[30px] pb-7 text-right">
+                        About Avenir
                       </p>
                       <p className="font-strike-light text-white">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
