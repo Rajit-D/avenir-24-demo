@@ -10,6 +10,8 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import { useState, useEffect } from "react";
 import Clock from "@/components/Clock/Clock";
 import { motion } from "framer-motion";
+import Sponsors from "../Sponsors/Sponsors";
+import Statistics from "../Statistics/Statistics";
 
 export default function LandingPage() {
   const words = `Enter the realms of multiverse`;
@@ -46,7 +48,7 @@ export default function LandingPage() {
   return (
     <div className="h-screen w-screen">
       <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
-        <ScrollControls pages={5} damping={0.1}>
+        <ScrollControls pages={4} damping={0.1}>
           <Blob />
           <Scroll html style={{ width: "100%" }}>
             <div className="bg-opacity-20 h-full z-2 backdrop-brightness-100 backdrop-blur-[1.7px] flex justify-center items-center flex-col">
@@ -203,7 +205,15 @@ export default function LandingPage() {
                     particleColor="#FFFFFF"
                   />
                 </div>
-                <h1>third page</h1>
+                <div className="flex justify-center items-center flex-col">
+                  <div className="flex justify-center items-center flex-col mb-5">
+                    <p className="font-strike text-3xl text-red-400">
+                      Our Statistics over the years
+                    </p>
+                    <Statistics />
+                  </div>
+                  <Sponsors />
+                </div>
               </div>
             </div>
           </Scroll>
