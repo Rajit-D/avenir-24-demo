@@ -129,26 +129,7 @@ const EventFormSingle = () => {
                 </div>
               </div>
             </div>
-            <label className="text-white flex items-start flex-col mb-5 text-[18px]">
-              Event
-              <div className="flex">
-                <select
-                  id="dropdown"
-                  value={selectedValue}
-                  onChange={handleEvent}
-                  className="text-white text-[15px] lg:w-[420px] w-[250px] h-[32px] rounded-md border border-2 border-[#474747] bg-transparent mt-3"
-                >
-                  <option value="" className="text-white">
-                    Select...
-                  </option>
-                  {options.map((option, index) => (
-                    <option key={index} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </label>
+
             <label className="text-white flex items-start flex-col mb-5 text-[18px]">
               Event
               <div className="flex">
