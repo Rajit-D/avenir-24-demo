@@ -4,13 +4,25 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Select } from "../ui/select";
 import { cn } from "@/utils/cn";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { TSoloEventSchema, soloEventSchema } from "@/lib/types";
 
 const SingleForm = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<TSoloEventSchema>({
+    resolver: zodResolver(soloEventSchema),
+  });
+  const onsubmit = async (data: TSoloEventSchema) => {
+    console.log(data);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
+    reset();
+  };
   const options = [
     "Sorcerous Solo (₹70)",
     "Western Mystique (₹70)",
@@ -27,45 +39,11 @@ const SingleForm = () => {
       <p className="lg:text-[25px] text-[19px] lg:mb-[50px] mb-[30px] font-bold">
         Registration form
       </p>
-      <div className="flex justify-between items-center flex-col w-[80%] mb-[50px]">
-        <div className="flex justify-between items-center lg:flex-row flex-col-reverse w-full">
-          <div className="lg:mt-0 lg:text-[15px]">
-            <p>
-              UPI id: <b>XXXXXXXXX@okXXXX</b>
-            </p>
-            <br />
-            <p>For any issues contact:</p>
-            <p>
-              Annesha Roy (<i>Treasurer</i>)
-            </p>
-            <p>
-              Mobile number: <b>XXXXXXXXXX</b>
-            </p>
-          </div>
-          {/* <img
-                  src={qrcode}
-                  alt="QR code"
-                  className="h[150px] w-[150px]"
-                /> */}
-        </div>
-        <div className="notes w-[109%]">
-          <div className="flex items-center flex-col mt-[30px] text-center">
-            <b>Note:</b>
-            <li className="text-[14px]">
-              <i>Take a screenshot of the successful payment.</i>
-            </li>
-            <li className="text-[14px]">
-              <i>Participant must be a present college student.</i>
-            </li>
-            <li className="text-[14px]">
-              <i>The registration fee amount is non-refundable.</i>
-            </li>
-          </div>
-        </div>
-      </div>
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      <form className="my-8" onSubmit={handleSubmit(onsubmit)}>
         <Select
+          name="event"
+          register={register}
           //   id="dropdown"
           //   value={selectedValue}
           //   onChange={handleEvent}
@@ -81,11 +59,29 @@ const SingleForm = () => {
           <div className="flex space-y-2 md:space-y-0 md:space-x-2 mt-4">
             <LabelInputContainer>
               <Label htmlFor="firstname">Name</Label>
-              <Input id="firstname" placeholder="Tyler Durden" type="text" />
+              <Input
+                id="firstname"
+                name="firstname"
+                placeholder="Tyler Durden"
+                type="text"
+                register={register}
+              />
+              {errors.name && (
+                <p className="text-red-500">{`${errors.name.message}`}</p>
+              )}
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="lastname">College Name</Label>
-              <Input id="lastname" placeholder="Fight Club" type="text" />
+              <Input
+                id="collegename"
+                name="collegename"
+                placeholder="Fight Club"
+                type="text"
+                register={register}
+              />
+              {errors.collegeName && (
+                <p className="text-red-500">{`${errors.collegeName.message}`}</p>
+              )}
             </LabelInputContainer>
           </div>
         </div>
@@ -93,17 +89,44 @@ const SingleForm = () => {
           <div className="flex space-y-2 md:space-y-0 md:space-x-2 mt-4">
             <LabelInputContainer>
               <Label htmlFor="firstname">Whatsapp number</Label>
-              <Input id="firstname" placeholder="98*** ***89" type="text" />
+              <Input
+                id="whatsappnumber"
+                name="whatsappnumber"
+                placeholder="98*** ***89"
+                type="text"
+                register={register}
+              />
+              {errors.whatsappNumber && (
+                <p className="text-red-500">{`${errors.whatsappNumber.message}`}</p>
+              )}
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="lastname">Alternate number</Label>
-              <Input id="lastname" placeholder="98*** ***89" type="text" />
+              <Input
+                id="atlernaenumber"
+                name="alternatenumber"
+                placeholder="98*** ***89"
+                type="text"
+                register={register}
+              />
+              {errors.alternateNumber && (
+                <p className="text-red-500">{`${errors.alternateNumber.message}`}</p>
+              )}
             </LabelInputContainer>
           </div>
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input
+            id="email"
+            name="email"
+            placeholder="projectmayhem@fc.com"
+            type="email"
+            register={register}
+          />
+          {errors.email && (
+            <p className="text-red-500">{`${errors.email.message}`}</p>
+          )}
         </LabelInputContainer>
 
         <button

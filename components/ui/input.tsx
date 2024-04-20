@@ -5,10 +5,13 @@ import { cn } from "@/utils/cn";
 import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  register?: any;
+  name?: string;
+}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, type, register, name, ...props }, ref) => {
     const radius = 100; // change this to increase the rdaius of the hover effect
     const [visible, setVisible] = React.useState(false);
 
@@ -50,6 +53,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className
           )}
           ref={ref}
+          name={name}
+          {...register(name)}
           {...props}
         />
       </motion.div>
