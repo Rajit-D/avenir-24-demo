@@ -4,11 +4,24 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Select } from "../ui/select";
 import { cn } from "@/utils/cn";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { TSoloEventSchema, soloEventSchema } from "@/lib/types";
 
 const MultipleForm = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<TSoloEventSchema>({
+    resolver: zodResolver(soloEventSchema),
+  });
+  const onsubmit = async (data: TSoloEventSchema) => {
+    console.log(data);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    reset();
   };
 
   const options = [
@@ -32,8 +45,10 @@ const MultipleForm = () => {
         yet
       </p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      <form className="my-8" onSubmit={handleSubmit(onsubmit)}>
         <Select
+          name="event"
+          register={register}
           //   id="dropdown"
           //   value={selectedValue}
           //   onChange={handleEvent}
@@ -49,29 +64,59 @@ const MultipleForm = () => {
           <div className="flex space-y-2 md:space-y-0 md:space-x-2 mt-4">
             <LabelInputContainer>
               <Label htmlFor="firstname">Name</Label>
-              <Input id="firstname" placeholder="Tyler Durden" type="text" />
+              <Input
+                id="firstname"
+                placeholder="Tyler Durden"
+                type="text"
+                name="firstname"
+                register={register}
+              />
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="lastname">College Name</Label>
-              <Input id="lastname" placeholder="Fight Club" type="text" />
+              <Input
+                id="collegename"
+                placeholder="Fight Club"
+                type="text"
+                name="collegename"
+                register={register}
+              />
             </LabelInputContainer>
           </div>
         </div>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <div className="flex space-y-2 md:space-y-0 md:space-x-2 mt-4">
             <LabelInputContainer>
-              <Label htmlFor="firstname">Whatsapp number</Label>
-              <Input id="firstname" placeholder="98*** ***89" type="text" />
+              <Label htmlFor="whatsappnumber">Whatsapp number</Label>
+              <Input
+                id="whatsappnumber"
+                placeholder="98*** ***89"
+                type="text"
+                name="whatsappnumber"
+                register={register}
+              />
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="lastname">Alternate number</Label>
-              <Input id="lastname" placeholder="98*** ***89" type="text" />
+              <Input
+                id="alternatenumber"
+                placeholder="98*** ***89"
+                type="text"
+                name="alternatenumber"
+                register={register}
+              />
             </LabelInputContainer>
           </div>
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input
+            id="email"
+            placeholder="projectmayhem@fc.com"
+            type="email"
+            name="email"
+            register={register}
+          />
         </LabelInputContainer>
 
         <button

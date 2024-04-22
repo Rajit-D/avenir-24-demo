@@ -7,10 +7,12 @@ import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
 export interface InputProps
   extends React.SelectHTMLAttributes<HTMLSelectElement> {
   className?: string;
+  register?: any;
+  name?: string;
 }
 
 const Select = React.forwardRef<HTMLSelectElement, InputProps>(
-  ({ className, ...props }) => {
+  ({ className, register, name, ...props }) => {
     const radius = 100; // change this to increase the rdaius of the hover effect
     const [visible, setVisible] = React.useState(false);
 
@@ -50,6 +52,7 @@ const Select = React.forwardRef<HTMLSelectElement, InputProps>(
            `,
             className
           )}
+          {...register(name)}
           {...props}
         />
       </motion.div>
