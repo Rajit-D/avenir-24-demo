@@ -18,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-full bg-black bg-grid-white/[0.4] relative flex items-center justify-center">
-          <div className="absolute pointer-events-none inset-0 flex items-center justify-centerbg-black [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black)] "></div>
+        <div className="w-full bg-black bg-grid-white/[0.4] relative flex items-center justify-center flex-col">
+          <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black)] "></div>
           <Navbar />
           {children}
         </div>

@@ -17,9 +17,9 @@ function Navbar() {
     setPath(location.pathname);
   }, []);
   return (
-    <div className="navbar font-strike-light flex justify-center items-center lg:absolute fixed top-0 left-0 bg-[#03001417] backdrop-blur-md z-50">
+    <div className="navbar font-strike-light flex justify-center items-center lg:absolute fixed top-0 left-0 z-10 bg-[#03001417] backdrop-blur-md">
       <div
-        className="absolute md:hidden top-50 top-[2.75px] left-[2.75px] z-[1000]"
+        className="absolute md:hidden top-50 top-[2.75px] left-[2.75px] z-20"
         onClick={handleNav}
       >
         {!navState ? (
@@ -28,7 +28,7 @@ function Navbar() {
           <HiX className="h-[30px] w-[30px] text-white bg-red-500" />
         )}
       </div>
-      <div className="icon md:flex md:flex-col md:justify-center md:items-center hidden md:w-30 py:2 md:py-3 z-10 relative top-[12px] left-[10%] ">
+      <div className="icon md:flex md:flex-col md:justify-center md:items-center hidden md:w-30 py:2 md:py-3 z-20 relative top-[12px] left-[10%] ">
         <a href="https://phoenixnsec.in/" target="_blank">
           <Image
             src={logo}
