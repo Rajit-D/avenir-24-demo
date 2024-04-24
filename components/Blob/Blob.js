@@ -57,7 +57,7 @@ const Blob = () => {
   useLayoutEffect(() => {
     const updateAnimation = () => {
       const width = window.innerWidth;
-      const gap = width < 600 ? 3 : 6.5;
+      const gap = width < 600 ? 4 : 6.5;
       tl.current = gsap.timeline({
         defaults: { duration: 5, ease: "power1.inOut" },
       });

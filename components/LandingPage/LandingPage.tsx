@@ -5,6 +5,7 @@ import Blob from "@/components/Blob/Blob";
 import { ScrollControls, Scroll } from "@react-three/drei";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import image from "@/public/assets/logo.png";
+import metaGirl from "@/public/assets/meta-girl.png";
 import Image from "next/image";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { useState, useEffect } from "react";
@@ -107,42 +108,61 @@ export default function LandingPage() {
                     particleColor="#FFFFFF"
                   />
                 </div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  // animate={{ opacity: 1, scale: 1 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.2,
-                    ease: [0, 0.71, 0.2, 1.01],
-                  }}
-                >
-                  <div className="flex justify-center">
-                    <div className="flex justify-center items-start flex-col w-1/2 p-[30px] ml-[50px] h-screen">
-                      <p className="font-strike text-red-400 text-[30px] pb-7">
-                        About the theme
-                      </p>
-                      <p className="font-strike-light text-white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Autem modi hic, vitae quod eaque, numquam sit beatae
-                        temporibus repudiandae cupiditate animi, dolores
-                        accusamus blanditiis facere fuga fugit repellat.
-                        Assumenda laborum, obcaecati excepturi, aperiam
-                        perferendis ullam veniam corrupti dolorum ratione dicta
-                        esse facere repellendus non. Et dolorem alias fugit
-                        laudantium saepe excepturi sapiente. Provident sint
-                        beatae impedit odit quam architecto enim dicta sed
-                        adipisci fuga totam eligendi nisi earum quisquam
-                        delectus voluptates dignissimos fugiat suscipit maiores
-                        veniam nam, soluta reiciendis aperiam iusto! Ipsam
-                        perferendis incidunt voluptatibus maxime, fugiat
-                        provident, veritatis totam, numquam cupiditate explicabo
-                        natus quos. Beatae nemo temporibus ad rem.
-                      </p>
+                <div className="flex">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.5,
+                      ease: [0, 0.71, 0.2, 1.01],
+                    }}
+                  >
+                    <div className="flex justify-center items-center md:flex-row flex-col-reverse">
+                      <div className="flex justify-center md:items-start items-center flex-col md:w-1/2 p-[30px] md:ml-[50px]">
+                        <p className="font-strike text-red-400 md:text-[30px] text-[20px] md:pb-7">
+                          About the theme
+                        </p>
+                        <p className="font-strike-light text-white md:text-left text-center md:text-[16px] text-[10px]">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Autem modi hic, vitae quod eaque, numquam sit
+                          beatae temporibus repudiandae cupiditate animi,
+                          dolores accusamus blanditiis facere fuga fugit
+                          repellat. Assumenda laborum, obcaecati excepturi,
+                          aperiam perferendis ullam veniam corrupti dolorum
+                          ratione dicta esse facere repellendus non. Et dolorem
+                          alias fugit laudantium saepe excepturi sapiente.
+                          Provident sint beatae impedit odit quam architecto
+                          enim dicta sed adipisci fuga totam eligendi nisi earum
+                          quisquam delectus voluptates dignissimos fugiat
+                          suscipit maiores veniam nam, soluta reiciendis aperiam
+                          iusto! Ipsam perferendis incidunt voluptatibus maxime,
+                          fugiat provident, veritatis totam, numquam cupiditate
+                          explicabo natus quos. Beatae nemo temporibus ad rem.
+                        </p>
+                      </div>
+                      <div className="md:w-1/2">
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{
+                            duration: 2.0,
+                            delay: 1.0,
+                            ease: [0, 0.71, 0.2, 1.01],
+                          }}
+                        >
+                          <Image
+                            src={metaGirl}
+                            alt=""
+                            height={500}
+                            width={500}
+                            className="md:relative md:left-[160px] md:bottom-[60px] md:h-[500px] h-[270px] md:w-[350px] w-[210px]"
+                          />
+                        </motion.div>
+                      </div>
                     </div>
-                    <div className=" w-1/2"></div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               </div>
               <div className="h-screen w-screen flex justify-center items-center">
                 <div className="w-full absolute inset-0 h-screen">
@@ -166,12 +186,12 @@ export default function LandingPage() {
                     ease: [0, 0.71, 0.2, 1.01],
                   }}
                 >
-                  <div className="flex items-end justify-end flex-row-reverse">
-                    <div className="flex justify-center items-start flex-col w-1/2 p-[30px] ml-[50px] h-screen">
-                      <p className="font-strike text-red-400 text-[30px] pb-7 text-right">
+                  <div className="flex items-center justify-center md:flex-row-reverse flex-col">
+                    <div className="flex justify-center md:items-start items-center flex-col md:w-1/2 p-[30px] md:ml-[50px]">
+                      <p className="font-strike text-red-400 md:text-[30px] text-[20px] md:pb-7 text-right">
                         About Avenir
                       </p>
-                      <p className="font-strike-light text-white">
+                      <p className="font-strike-light text-white md:text-[16px] md:text-left text-center text-[10px]">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Autem modi hic, vitae quod eaque, numquam sit beatae
                         temporibus repudiandae cupiditate animi, dolores
@@ -207,7 +227,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex justify-center items-center flex-col">
                   <div className="flex justify-center items-center flex-col mb-5">
-                    <p className="font-strike text-3xl text-red-400">
+                    <p className="font-strike md:text-[30px] text-[20px] text-center text-red-400 text-wrap">
                       Our Statistics over the years
                     </p>
                     <Statistics />
