@@ -6,8 +6,8 @@ import { Select } from "../ui/select";
 import { cn } from "@/utils/cn";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { TMultiEventSchema, TSoloEventSchema, multiEventSchema, soloEventSchema } from "@/lib/types";
-import { events } from "@/utils/events";
+import { TMultiEventSchema, multiEventSchema } from "@/lib/types";
+import { multipleEvents } from "@/utils/multi";
 import { LuIndianRupee, LuPlusCircle, LuXCircle } from "react-icons/lu";
 import FileUpload from "../FileUpload/FileUpload";
 import axios from "axios";
@@ -17,9 +17,8 @@ const MultipleForm = ({ category }: {
   category: string;
 }) => {
 
-  const [event, setEvent] = React.useState<IEvents>(events[category as keyof typeof events][0]);
+  const [event, setEvent] = React.useState<IMultiEvent>(multipleEvents[category as keyof typeof multipleEvents][0]);
   const [members, setMembers] = React.useState([] as { name: string, info: string }[]);
-  const [uploading, setUploading] = React.useState(false);
 
   const {
     register,
@@ -37,7 +36,6 @@ const MultipleForm = ({ category }: {
 
   // Change any here
   const onsubmit = async (data: TMultiEventSchema) => {
-    setUploading(true);
 
     delete data.memberName
     delete data.memberInfo
@@ -53,7 +51,6 @@ const MultipleForm = ({ category }: {
     if (res.status === 200) {
       alert("Registered successfully")
     }
-    setUploading(false);
 
   };
 
@@ -71,14 +68,14 @@ const MultipleForm = ({ category }: {
         <Select
           name="event"
           register={register}
-          defaultValue={events[category as keyof typeof events][0].name}
+          defaultValue={multipleEvents[category as keyof typeof multipleEvents][0].name}
           onChange={(e) => {
             let eventName = e.target.value
-            events[category as keyof typeof events].find(ele => ele.name === eventName && setEvent(ele))
+            multipleEvents[category as keyof typeof multipleEvents].find(ele => ele.name === eventName && setEvent(ele))
           }}
           className="text-white text-[15px] w-full h-[32px] rounded-md border-2 border-[#474747] bg-[#1E212B]"
         >
-          {events[category as keyof typeof events]?.map((ele: IEvents, index: number) => (
+          {multipleEvents[category as keyof typeof multipleEvents]?.map((ele: IMultiEvent, index: number) => (
             <option key={index} value={ele.name}>
               {ele.name}
             </option>
@@ -229,10 +226,10 @@ const MultipleForm = ({ category }: {
         <button
           className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
-          disabled={members.length < event.min || members.length > event.max || isSubmitting || uploading}
+          disabled={members.length < event.min || members.length > event.max || isSubmitting}
         >
-          {uploading ? <Loader2 className="animate-spin" color="white" /> : <span>Register &rarr;</span>}
-          {members.length >= event.min && members.length <= event.max && !isSubmitting && !uploading && <BottomGradient />}
+          {isSubmitting ? <Loader2 className="animate-spin" color="white" /> : <span>Register &rarr;</span>}
+          {members.length >= event.min && members.length <= event.max && !isSubmitting && <BottomGradient />}
         </button>
 
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />

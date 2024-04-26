@@ -1,4 +1,4 @@
-export const events = {
+export const multipleEvents = {
   "Robonix": [
     {
       name: "Robo Soccer",

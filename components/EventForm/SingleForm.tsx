@@ -7,134 +7,142 @@ import { cn } from "@/utils/cn";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TSoloEventSchema, soloEventSchema } from "@/lib/types";
+import { LuIndianRupee } from "react-icons/lu";
+import FileUpload from "../FileUpload/FileUpload";
+import axios from "axios";
+import { Loader2 } from "lucide-react";
+import { singleEvents } from "@/utils/single";
 
-const SingleForm = () => {
+const SingleForm = ({ category }: {
+  category: string;
+}) => {
+
+  const [event, setEvent] = React.useState<ISingleEvent>(singleEvents[category as keyof typeof singleEvents][0]);
+
   const {
     register,
     handleSubmit,
-    reset,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<TSoloEventSchema>({
     resolver: zodResolver(soloEventSchema),
+    defaultValues: {
+      payment: "",
+    }
   });
-  const onsubmit = async (data: TSoloEventSchema) => {
-    console.log(data);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    reset();
+  // Change any here
+  const onsubmit = async (data: TSoloEventSchema) => {
+
+    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/registration/single`, data)
+
+    if (res.status === 200) {
+      alert("Registered successfully")
+    }
+
   };
-  const options = [
-    "Sorcerous Solo (₹70)",
-    "Western Mystique (₹70)",
-    "Mayhem Showdown (₹60)",
-    "Mridangam (₹70)",
-    "Rhythmic Wizardry (₹70)",
-    "Artistic Odyssey (₹50)",
-    "SpellBound Sagas (₹50)",
-    "Enchanted Legends (₹50)",
-  ];
 
   return (
-    <div className="max-w-md w-full text-white mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-      <p className="lg:text-[25px] text-[19px] lg:mb-[50px] mb-[30px] font-bold">
-        Registration form
-      </p>
+    <div className="max-w-3xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black h-[700px] overflow-y-auto">
+      <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+        Register for {category} event
+      </h2>
+      <div className="flex items-center gap-2 text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+        <p>Amount to be paid:</p>
+        <p className="flex items-center"><LuIndianRupee />{event.price} </p>
+      </div>
 
       <form className="my-8" onSubmit={handleSubmit(onsubmit)}>
         <Select
           name="event"
           register={register}
-          //   id="dropdown"
-          //   value={selectedValue}
-          //   onChange={handleEvent}
-          className="text-white text-[15px] lg:w-full w-[250px] h-[32px] rounded-md border border-2 border-[#474747] bg-[#1E212B]"
+          defaultValue={singleEvents[category as keyof typeof singleEvents][0].name}
+          onChange={(e) => {
+            let eventName = e.target.value
+            singleEvents[category as keyof typeof singleEvents].find(ele => ele.name === eventName && setEvent(ele))
+          }}
+          className="text-white text-[15px] w-full h-[32px] rounded-md border-2 border-[#474747] bg-[#1E212B] my-5"
         >
-          {options.map((option, index) => (
-            <option key={index} value={option}>
-              {option}
+          {singleEvents[category as keyof typeof singleEvents]?.map((ele: ISingleEvent, index: number) => (
+            <option key={index} value={ele.name}>
+              {ele.name}
             </option>
           ))}
         </Select>
+
+        {/* Team Name and Team Lead Name */}
+        <div className="flex flex-col lg:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+          <LabelInputContainer>
+            <Label htmlFor="name">Name</Label>
+            <Input
+              id="name"
+              placeholder="Megatron"
+              type="text"
+              name="name"
+              register={register}
+            />
+          </LabelInputContainer>
+        </div>
+
+        {/* College */}
+        <LabelInputContainer>
+          <Label htmlFor="collegeName">College Name</Label>
+          <Input
+            id="collegeName"
+            placeholder="Netaji Subhash Engineering College"
+            type="text"
+            name="collegeName"
+            register={register}
+          />
+        </LabelInputContainer>
+
+        {/* Contact Number */}
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
-          <div className="flex space-y-2 md:space-y-0 md:space-x-2 mt-4">
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mt-4 w-full">
             <LabelInputContainer>
-              <Label htmlFor="firstname">Name</Label>
+              <Label htmlFor="whatsappNumber">Whatsapp number</Label>
               <Input
-                id="firstname"
-                name="firstname"
-                placeholder="Tyler Durden"
+                id="whatsappNumber"
+                placeholder="98*** ***89"
                 type="text"
+                name="whatsappNumber"
                 register={register}
               />
-              {errors.name && (
-                <p className="text-red-500">{`${errors.name.message}`}</p>
-              )}
             </LabelInputContainer>
             <LabelInputContainer>
-              <Label htmlFor="lastname">College Name</Label>
+              <Label htmlFor="alternateNumber">Alternate number</Label>
               <Input
-                id="collegename"
-                name="collegename"
-                placeholder="Fight Club"
+                id="alternateNumber"
+                placeholder="98*** ***89"
                 type="text"
+                name="alternateNumber"
                 register={register}
               />
-              {errors.collegeName && (
-                <p className="text-red-500">{`${errors.collegeName.message}`}</p>
-              )}
             </LabelInputContainer>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
-          <div className="flex space-y-2 md:space-y-0 md:space-x-2 mt-4">
-            <LabelInputContainer>
-              <Label htmlFor="firstname">Whatsapp number</Label>
-              <Input
-                id="whatsappnumber"
-                name="whatsappnumber"
-                placeholder="98*** ***89"
-                type="text"
-                register={register}
-              />
-              {errors.whatsappNumber && (
-                <p className="text-red-500">{`${errors.whatsappNumber.message}`}</p>
-              )}
-            </LabelInputContainer>
-            <LabelInputContainer>
-              <Label htmlFor="lastname">Alternate number</Label>
-              <Input
-                id="atlernaenumber"
-                name="alternatenumber"
-                placeholder="98*** ***89"
-                type="text"
-                register={register}
-              />
-              {errors.alternateNumber && (
-                <p className="text-red-500">{`${errors.alternateNumber.message}`}</p>
-              )}
-            </LabelInputContainer>
-          </div>
-        </div>
+
+        {/* Email ID of Team Lead */}
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
           <Input
             id="email"
-            name="email"
-            placeholder="projectmayhem@fc.com"
+            placeholder="Team Lead's Email Address"
             type="email"
+            name="email"
             register={register}
           />
-          {errors.email && (
-            <p className="text-red-500">{`${errors.email.message}`}</p>
-          )}
         </LabelInputContainer>
 
+        <FileUpload setValue={setValue} />
+
         <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+          className="text-center bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
+          disabled={isSubmitting}
         >
-          Sign up &rarr;
-          <BottomGradient />
+          {isSubmitting ? <Loader2 className="animate-spin" color="white" /> : <span>Register &rarr;</span>}
+          {!isSubmitting && <BottomGradient />}
         </button>
 
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />

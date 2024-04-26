@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const soloEventSchema = z.object({
+  event: z.string(),
   name: z.string().min(1, "Name cannot be empty"),
   collegeName: z.string().min(1, "College name cannot be empty"),
   whatsappNumber: z.string().refine((value) => /^\d{10}$/.test(value), {
@@ -10,8 +11,11 @@ export const soloEventSchema = z.object({
   alternateNumber: z.string().refine((value) => /^\d{10}$/.test(value), {
     message: "Alternate number must be a 10-digit string",
     path: ["alternateNumber"],
-  }),
+  }).optional(),
   email: z.string().email(),
+
+  payment: z.string()
+
 });
 
 export type TSoloEventSchema = z.infer<typeof soloEventSchema>;
