@@ -44,9 +44,10 @@ const config: Config = {
       },
       fontFamily: {
         "star-wars": ["star-wars"],
-        strike: ["strike"],
+        "strike": ["strike"],
         "strike-light": ["strike-light"],
-        digital: ["digital"],
+        "digital": ["digital"],
+        "mont": ["montserrat"],
       },
     },
   },

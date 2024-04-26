@@ -11,17 +11,17 @@ import { MdDescription } from "react-icons/md";
 
 const EventsPage = () => {
   return (
-    <div className="text-white mt-[150px] flex justify-center items-center flex-col md:w-[70%] mb-[80px]">
+    <div className="text-white md:mt-[150px] mt-[120px] flex justify-center items-center flex-col md:w-[70%] mb-[80px]">
       <h2 className="font-strike text-[35px] mb-[10px]">Event Name</h2>
       <div className="flex justify-center items-center md:flex-row flex-col mt-[20px]">
-        <div className="w-full">
+        <div className="w-full flex justify-center items-center">
           <Image
             src={poster}
             alt="event poster"
-            className="h-[450px] w-[400px]"
+            className="md:h-[450px] h-[330px] md:w-[400px] w-[300px]"
           />
         </div>
-        <div className="">
+        <div className="font-mont">
           <div className="m-5 p-3">
             <p className="flex">
               <IoCalendarOutline className="text-[20px]" />
@@ -39,11 +39,11 @@ const EventsPage = () => {
           <div className="m-5 p-3">
             <p className="flex">
               <IoPersonSharp className="text-[20px]" />
-              &nbsp; <b>Event co-ordinator 1:</b>&nbsp; 9830487386
+              &nbsp; <b>Event co-ordinator 1:</b> 9830487386
             </p>
             <p className="flex">
               <IoPersonSharp className="text-[20px]" />
-              &nbsp; <b>Event co-ordinator 2:</b>&nbsp; 9830487386
+              &nbsp; <b>Event co-ordinator 2:</b> 9830487386
             </p>
           </div>
           <div className="m-5 p-3">
@@ -65,18 +65,13 @@ const EventsPage = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[20px]">
-        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#C6D2ED,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-          Register here
+      <div className="md:mt-[60px] mt-[40px] flex justify-between items-center w-[50%] md:flex-row flex-col">
+        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#FF3131,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-[200px] md:mb-0 mb-5 font-mont">
+          View Rulebook
         </button>
-      </div>
-      <div className="mt-[40px]">
-        <p>
-          <b>Rules:</b>
-        </p>
-        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#FF3131,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-[200px] font-mont">
+          Register
+        </button>
       </div>
     </div>
   );

@@ -13,6 +13,7 @@ import Clock from "@/components/Clock/Clock";
 import { motion } from "framer-motion";
 import Sponsors from "../Sponsors/Sponsors";
 import Statistics from "../Statistics/Statistics";
+import { Footer } from "../Footer/Footer";
 
 export default function LandingPage() {
   const words = `Enter the realms of multiverse`;

@@ -15,9 +15,9 @@ const WingCard = ({ wing }: Props) => {
       </figure>
       <div className="card-body">
         <h2 className="text-[20px] font-strike">{wing}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <p className="font-mont">If a dog chews shoes whose shoes does he choose?</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Register!</button>
+          <button className="btn btn-primary font-mont">Register!</button>
         </div>
       </div>
     </div>
