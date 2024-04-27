@@ -23,24 +23,6 @@ const TeamsCard = () => {
         </div>
       </div>
     </BackgroundGradient>
-  //   <BackgroundGradient className="rounded-[22px] p-4 sm:p-1 bg-[#1B1B1E]">
-  //   <div className="flex flex-col justify-center items-center p-2 mx-auto w-[370px] text-center text-white rounded-[22px]">
-  //     <img
-  //       src="https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg"
-  //       className="h-[150px] w-[150px] rounded-full mt-3"
-  //     />
-  //     <div className="flex flex-col justify-center items-center mt-4 w-[300px]">
-  //       <h3 className="text-2xl font-strike text-center">Anakin Skywalker</h3>
-  //       <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-  //         The Fallen Jedi
-  //       </p>
-  //       <div className="mt-3 mb-3 flex justify-around text-[25px] text-white">
-  //           <FaInstagram className="mr-4" />
-  //           <FaLinkedinIn className="ml-4" />
-  //         </div>
-  //     </div>
-  //   </div>
-  // </BackgroundGradient>
   );
 };
 
