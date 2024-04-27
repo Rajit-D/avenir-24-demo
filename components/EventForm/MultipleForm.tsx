@@ -50,6 +50,7 @@ const MultipleForm = ({ category }: {
 
     if (res.status === 200) {
       alert("Registered successfully")
+      reset()
     }
 
   };
@@ -198,7 +199,8 @@ const MultipleForm = ({ category }: {
 
                   setMembers([...members, { name: memberName, info: memberInfo }])
 
-                  reset({ memberName: "", memberInfo: "" })
+                  setValue("memberName", "")
+                  setValue("memberInfo", "")
                 }}
               />
             </div>

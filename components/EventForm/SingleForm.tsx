@@ -23,6 +23,7 @@ const SingleForm = ({ category }: {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<TSoloEventSchema>({
     resolver: zodResolver(soloEventSchema),
@@ -38,6 +39,7 @@ const SingleForm = ({ category }: {
 
     if (res.status === 200) {
       alert("Registered successfully")
+      reset()
     }
 
   };
