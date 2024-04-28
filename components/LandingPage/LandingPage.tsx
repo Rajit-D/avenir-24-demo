@@ -6,6 +6,7 @@ import { ScrollControls, Scroll } from "@react-three/drei";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import image from "@/public/assets/logo.png";
 import metaGirl from "@/public/assets/meta-girl.png";
+import avenirLogo from "@/public/assets/avenirlogo.png";
 import Image from "next/image";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { useState, useEffect } from "react";
@@ -187,7 +188,7 @@ export default function LandingPage() {
                     ease: [0, 0.71, 0.2, 1.01],
                   }}
                 >
-                  <div className="flex items-center justify-center md:flex-row-reverse flex-col">
+                  <div className="flex items-center justify-center md:flex-row-reverse flex-col-reverse">
                     <div className="flex justify-center md:items-start items-center flex-col md:w-1/2 p-[30px] md:ml-[50px]">
                       <p className="font-strike text-red-400 md:text-[30px] text-[20px] md:pb-7 text-right">
                         About Avenir
@@ -210,7 +211,25 @@ export default function LandingPage() {
                         natus quos. Beatae nemo temporibus ad rem.
                       </p>
                     </div>
-                    <div className=" w-1/2"></div>
+                    <div className="md:w-1/2">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 2.0,
+                          delay: 1.0,
+                          ease: [0, 0.71, 0.2, 1.01],
+                        }}
+                      >
+                        <Image
+                          src={avenirLogo}
+                          alt=""
+                          height={500}
+                          width={500}
+                          className="md:relative md:left-[200px] md:bottom-[10px] md:h-[500px] h-[250px] md:w-[500px] w-[250px]"
+                        />
+                      </motion.div>
+                    </div>
                   </div>
                 </motion.div>
               </div>
