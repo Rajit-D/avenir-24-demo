@@ -126,21 +126,7 @@ export default function LandingPage() {
                           About the theme
                         </p>
                         <p className="font-strike-light text-white md:text-left text-center md:text-[16px] text-[10px]">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Autem modi hic, vitae quod eaque, numquam sit
-                          beatae temporibus repudiandae cupiditate animi,
-                          dolores accusamus blanditiis facere fuga fugit
-                          repellat. Assumenda laborum, obcaecati excepturi,
-                          aperiam perferendis ullam veniam corrupti dolorum
-                          ratione dicta esse facere repellendus non. Et dolorem
-                          alias fugit laudantium saepe excepturi sapiente.
-                          Provident sint beatae impedit odit quam architecto
-                          enim dicta sed adipisci fuga totam eligendi nisi earum
-                          quisquam delectus voluptates dignissimos fugiat
-                          suscipit maiores veniam nam, soluta reiciendis aperiam
-                          iusto! Ipsam perferendis incidunt voluptatibus maxime,
-                          fugiat provident, veritatis totam, numquam cupiditate
-                          explicabo natus quos. Beatae nemo temporibus ad rem.
+                        The metaverse is a persistent, interconnected virtual reality where users can interact, create, and explore through their digital avatars.  It represents the convergence of virtual reality, augmented reality, artificial intelligence, and digital avatars into a seamless, immersive digital experience.  Unlike the multiverse, which refers to parallel universes with their own physical laws, the metaverse is a unified virtual world that aims to enhance and complement the physical world.  Proposed applications for the metaverse include improving work productivity, interactive learning environments, e-commerce, mass-audience interaction, healthcare, and real estate. 
                         </p>
                       </div>
                       <div className="md:w-1/2">
@@ -194,21 +180,7 @@ export default function LandingPage() {
                         About Avenir
                       </p>
                       <p className="font-strike-light text-white md:text-[16px] md:text-left text-center text-[10px]">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Autem modi hic, vitae quod eaque, numquam sit beatae
-                        temporibus repudiandae cupiditate animi, dolores
-                        accusamus blanditiis facere fuga fugit repellat.
-                        Assumenda laborum, obcaecati excepturi, aperiam
-                        perferendis ullam veniam corrupti dolorum ratione dicta
-                        esse facere repellendus non. Et dolorem alias fugit
-                        laudantium saepe excepturi sapiente. Provident sint
-                        beatae impedit odit quam architecto enim dicta sed
-                        adipisci fuga totam eligendi nisi earum quisquam
-                        delectus voluptates dignissimos fugiat suscipit maiores
-                        veniam nam, soluta reiciendis aperiam iusto! Ipsam
-                        perferendis incidunt voluptatibus maxime, fugiat
-                        provident, veritatis totam, numquam cupiditate explicabo
-                        natus quos. Beatae nemo temporibus ad rem.
+                      Avenir is the largest Tech Fest in Kolkata, organised by Phoenix – The official Tech club of Netaji Subhash Engineering College. Avenir’ 24 is a 3 days program with 30+ events and 20+ colleges participating.
                       </p>
                     </div>
                     <div className="md:w-1/2">
@@ -233,7 +205,7 @@ export default function LandingPage() {
                   </div>
                 </motion.div>
               </div>
-              <div className="h-screen w-screen flex justify-center items-center">
+              <div className="h-screen w-screen flex justify-center items-center mt-[80px] md:mt-0">
                 <div className="w-full absolute inset-0 h-screen">
                   <SparklesCore
                     id="tsparticlesfullpage"
@@ -245,7 +217,7 @@ export default function LandingPage() {
                     particleColor="#FFFFFF"
                   />
                 </div>
-                <div className="flex justify-center items-center flex-col">
+                <div className="flex justify-between items-center flex-col">
                   <div className="flex justify-center items-center flex-col mb-5">
                     <p className="font-strike md:text-[30px] text-[20px] text-center text-red-400 text-wrap">
                       Our Statistics over the years
