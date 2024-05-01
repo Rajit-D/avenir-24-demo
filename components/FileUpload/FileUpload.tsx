@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Dropzone from "react-dropzone";
 import { ImagePlusIcon, Loader2Icon, Sparkles } from "lucide-react";
 import Image from "next/image";
-import axios from "axios";
+import { supabase } from "@/utils/supabase";
 
 const FileUpload = ({ setValue }: {
   setValue: any
@@ -12,19 +12,22 @@ const FileUpload = ({ setValue }: {
   const [dragOver, setDragOver] = useState<boolean>(false);
 
 
+
   const uploadFile = async (e: File) => {
     if (e) {
       setUploading(true);
 
-      const fd = new FormData();
-      fd.append("payment", e);
+      const filename = Date.now() + "_" + e.name;
+      const { data, error } = await supabase.storage.from(process.env.NEXT_PUBLIC_SUPABASE_BUCKET!).upload(filename, e)
+      if (error) {
+        alert("Something went wrong! Please contact the admins")
+        return
+      }
 
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/registration/upload`, fd)
-
-      if (res.status === 200) {
-        // Show an alert or something... I'm too lazy to do that :)
-        setImageUrl(res.data.url);
-        setValue("payment", res.data.url);
+      if (data) {
+        const { data: image } = supabase.storage.from(process.env.NEXT_PUBLIC_SUPABASE_BUCKET!).getPublicUrl(data?.path!)
+        setImageUrl(image.publicUrl)
+        setValue("payment", image.publicUrl);
       }
 
       setUploading(false);
