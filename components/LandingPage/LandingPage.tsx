@@ -78,7 +78,7 @@ export default function LandingPage() {
                         alt="Avenir Logo"
                         className="md:w-[100px] md:h-[120px] h-[50px] w-[45px]"
                       />
-                      <h1 className="md:text-[7em] text-[3em] ml-2 font-star-wars text-[#cdcbca]">
+                      <h1 className="md:text-[7em] text-[3em] ml-2 font-star-wars  text-[#cdcbca]">
                         ENIR&apos;24
                       </h1>
                     </div>
@@ -88,18 +88,18 @@ export default function LandingPage() {
                     {!completed ? (
                       <Clock timerDays={timerDays} />
                     ) : (
-                      <p className="clock text-purple-600 lg:text-[40px] lg:pl-4 text-[25px] text-center">
+                      <p className="clock text-purple-600 lg:pl-4 text-[25px] text-center">
                         {days}
                       </p>
                     )}
-                    <p className="text-red-500 text-center relative top-[55px] font-strike-light md:tracking-[7px] md:left-[7px] left-[3.5px]">
+                    <p className="text-red-500 text-center outline-4 relative top-[55px] font-strike-light md:tracking-[7px] md:left-[7px] left-[3.5px]">
                       until showtime
                     </p>
                   </div>
                 </div>
               </div>
               <div className="h-screen w-screen flex justify-center items-center">
-                <div className="w-full absolute inset-0 h-screen">
+                <div className="w-full absolute inset-0 h-full">
                   <SparklesCore
                     id="tsparticlesfullpage"
                     background="transparent"
@@ -126,7 +126,20 @@ export default function LandingPage() {
                           About the theme
                         </p>
                         <p className="font-strike-light text-white md:text-left text-center md:text-[16px] text-[10px]">
-                        The metaverse is a persistent, interconnected virtual reality where users can interact, create, and explore through their digital avatars.  It represents the convergence of virtual reality, augmented reality, artificial intelligence, and digital avatars into a seamless, immersive digital experience.  Unlike the multiverse, which refers to parallel universes with their own physical laws, the metaverse is a unified virtual world that aims to enhance and complement the physical world.  Proposed applications for the metaverse include improving work productivity, interactive learning environments, e-commerce, mass-audience interaction, healthcare, and real estate. 
+                          The metaverse is a persistent, interconnected virtual
+                          reality where users can interact, create, and explore
+                          through their digital avatars. It represents the
+                          convergence of virtual reality, augmented reality,
+                          artificial intelligence, and digital avatars into a
+                          seamless, immersive digital experience. Unlike the
+                          multiverse, which refers to parallel universes with
+                          their own physical laws, the metaverse is a unified
+                          virtual world that aims to enhance and complement the
+                          physical world. Proposed applications for the
+                          metaverse include improving work productivity,
+                          interactive learning environments, e-commerce,
+                          mass-audience interaction, healthcare, and real
+                          estate.
                         </p>
                       </div>
                       <div className="md:w-1/2">
@@ -180,7 +193,16 @@ export default function LandingPage() {
                         About Avenir
                       </p>
                       <p className="font-strike-light text-white md:text-[16px] md:text-left text-center text-[10px]">
-                      Avenir is the largest Tech Fest in Kolkata, organised by Phoenix – The official Tech club of Netaji Subhash Engineering College. Avenir’ 24 is a 3 days program with 30+ events and 20+ colleges participating.
+                        Avenir is the largest Tech Fest in Kolkata, organised by
+                        Phoenix – The official Tech club of Netaji Subhash
+                        Engineering College. Avenir’ 24 is a 3 days program with
+                        30+ events and 20+ colleges participating. It’s a
+                        dynamic event featuring workshops, hackathons,
+                        competitions, and keynote speeches, igniting a passion
+                        for learning and exploration among students. With
+                        interactive exhibits and networking opportunities, it
+                        fosters collaboration, inspiration, and the exchange of
+                        groundbreaking ideas.
                       </p>
                     </div>
                     <div className="md:w-1/2">
@@ -205,7 +227,7 @@ export default function LandingPage() {
                   </div>
                 </motion.div>
               </div>
-              <div className="h-screen w-screen flex justify-center items-center mt-[80px] md:mt-0">
+              <div className="h-screen w-screen flex justify-center items-center flex-col mt-[80px] md:mt-0">
                 <div className="w-full absolute inset-0 h-screen">
                   <SparklesCore
                     id="tsparticlesfullpage"
@@ -217,7 +239,7 @@ export default function LandingPage() {
                     particleColor="#FFFFFF"
                   />
                 </div>
-                <div className="flex justify-between items-center flex-col">
+                <div className="flex justify-center items-center flex-col md:mb-[0px] mb-[100px]">
                   <div className="flex justify-center items-center flex-col mb-5">
                     <p className="font-strike md:text-[30px] text-[20px] text-center text-red-400 text-wrap">
                       Our Statistics over the years

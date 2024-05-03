@@ -63,7 +63,7 @@ function Navbar() {
               </a>
             </li>
           </div>
-          <div className="flex md:flex-row flex-col justify-center items-center px-5 relative left-[6%]">
+          <div className="flex md:flex-row flex-col justify-center items-center md:px-5 relative md:left-[6%] md:top-0 top-6">
             <li className="">
               <Link href="/">Home</Link>
             </li>
