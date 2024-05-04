@@ -44,7 +44,7 @@ const Page = ({ params }: { params: { eventCategory: string } }) => {
 
   return (
     <div className="text-black w-screen md:h-auto h-auto flex justify-center items-between bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
-      <div className="flex justify-center items-center w-screen flex-col mb-10 md:mt-[150px] mt-[100px]">
+      <div className="flex justify-center items-center w-screen flex-col mb-10 md:mt-[150px] mt-[100px] mb-[120px]">
         <p className="font-strike text-[#FF3131] md:text-[55px] text-[45px]">
           {params.eventCategory}
         </p>
