@@ -61,7 +61,7 @@ const Page = ({
         <Loading />
       ) : (
         <div>
-          <EventsPage eventData={eventData} />
+          <EventsPage eventData={eventData} eventCategory={params.eventCategory} />
         </div>
       )}
     </div>

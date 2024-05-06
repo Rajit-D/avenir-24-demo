@@ -4,6 +4,9 @@ import { IoCalendarOutline, IoPersonSharp } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
 import { MdEmojiEvents, MdDescription } from "react-icons/md";
 import Link from "next/link";
+import { multipleEventsArray } from "@/utils/multi";
+import { useRouter } from "next/navigation";
+import { eventNames } from "process";
 
 // Define the EventData interface
 interface EventData {
@@ -26,10 +29,21 @@ interface EventData {
 
 type Props = {
   eventData: EventData | null;
+  eventCategory: string;
 };
 
-const EventsPage = ({ eventData }: Props) => {
+const EventsPage = ({ eventData, eventCategory }: Props) => {
+  const router = useRouter();
   if (!eventData) return null;
+
+  const handleClick = (eventName: any) => {
+    if (multipleEventsArray.includes(eventName)) {
+      router.push(`/multipleForm/${eventCategory}`);
+    }
+    else{
+      router.push(`/singleForm/${eventCategory}`);
+    }
+  };
 
   return (
     <div className="text-black w-screen md:h-auto h-auto flex justify-center items-center bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
@@ -90,9 +104,16 @@ const EventsPage = ({ eventData }: Props) => {
               View Rulebook
             </button>
           </Link>
-          <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#FF3131,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-[200px] font-mont relative md:right-[70px]">
+          {/* <Link href={`/singleForm/${eventCategory}`} target="blank"> */}
+          <button
+            className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#FF3131,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-[200px] font-mont relative md:right-[70px]"
+            onClick={() => {
+              handleClick(eventData.eventName);
+            }}
+          >
             Register
           </button>
+          {/* </Link> */}
         </div>
       </div>
     </div>

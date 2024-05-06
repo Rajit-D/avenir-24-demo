@@ -1,5 +1,5 @@
 export const multipleEvents = {
-  Robonix: [
+  robonix: [
     {
       name: "Robo Soccer",
       min: 1,
@@ -26,7 +26,7 @@ export const multipleEvents = {
       price: 1150,
     },
   ],
-  Esports: [
+  esports: [
     {
       name: "E-Football",
       min: 5,
@@ -40,7 +40,7 @@ export const multipleEvents = {
       price: 200,
     },
   ],
-  Eloquense: [
+  eloquense: [
     {
       name: "Dimensional Discourse",
       min: 2,
@@ -54,7 +54,7 @@ export const multipleEvents = {
       price: 150,
     },
   ],
-  Nirman: [
+  nirman: [
     {
       name: "Bridge-o-mania",
       min: 2,
@@ -62,7 +62,7 @@ export const multipleEvents = {
       price: 120,
     },
   ],
-  Fun: [
+  fun: [
     {
       name: "Treasure Hunt",
       min: 4,
@@ -77,3 +77,17 @@ export const multipleEvents = {
     },
   ],
 };
+
+export const multipleEventsArray = [
+  "Robo Soccer",
+  "Terra Rover",
+  "Robo War",
+  "COMBO 1 (Robo Soccer, Robo Kombat, Terra Rover)",
+  "E-Football",
+  "BGMI",
+  "Dimensional Discourse",
+  "Cosmic Conundrum",
+  "Bridge-o-mania",
+  "Treasure Hunt",
+  "Beg! Borrow! Steal!",
+];
