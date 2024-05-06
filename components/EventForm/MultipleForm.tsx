@@ -13,12 +13,13 @@ import FileUpload from "../FileUpload/FileUpload";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
 
-const MultipleForm = ({ category }: {
-  category: string;
-}) => {
-
-  const [event, setEvent] = React.useState<IMultiEvent>(multipleEvents[category as keyof typeof multipleEvents][0]);
-  const [members, setMembers] = React.useState([] as { name: string, info: string }[]);
+const MultipleForm = ({ category }: { category: string }) => {
+  const [event, setEvent] = React.useState<IMultiEvent>(
+    multipleEvents[category as keyof typeof multipleEvents][0]
+  );
+  const [members, setMembers] = React.useState(
+    [] as { name: string; info: string }[]
+  );
 
   const {
     register,
@@ -31,56 +32,65 @@ const MultipleForm = ({ category }: {
     resolver: zodResolver(multiEventSchema),
     defaultValues: {
       payment: "",
-    }
+    },
   });
 
   // Change any here
   const onsubmit = async (data: TMultiEventSchema) => {
-
-    delete data.memberName
-    delete data.memberInfo
+    delete data.memberName;
+    delete data.memberInfo;
 
     const toUpload = {
       ...data,
-      members
-    }
+      members,
+    };
 
-    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/registration/multi`, toUpload)
-
+    const res = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/registration/multi`,
+      toUpload
+    );
 
     if (res.status === 200) {
-      alert("Registered successfully")
-      reset()
+      alert("Registered successfully");
+      reset();
     }
-
   };
 
   return (
-    <div className="max-w-3xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black h-[700px] overflow-y-auto">
+    <div className="max-w-3xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black h-[100%] overflow-y-auto">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Register for {category} event
       </h2>
       <div className="flex items-center gap-2 text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
         <p>Amount to be paid:</p>
-        <p className="flex items-center"><LuIndianRupee />{event.price} </p>
+        <p className="flex items-center">
+          <LuIndianRupee />
+          {event.price}{" "}
+        </p>
       </div>
 
       <form className="my-8" onSubmit={handleSubmit(onsubmit)}>
         <Select
           name="event"
           register={register}
-          defaultValue={multipleEvents[category as keyof typeof multipleEvents][0].name}
+          defaultValue={
+            multipleEvents[category as keyof typeof multipleEvents][0].name
+          }
           onChange={(e) => {
-            let eventName = e.target.value
-            multipleEvents[category as keyof typeof multipleEvents].find(ele => ele.name === eventName && setEvent(ele))
+            let eventName = e.target.value;
+            multipleEvents[category as keyof typeof multipleEvents].find(
+              (ele) => ele.name === eventName && setEvent(ele)
+            );
           }}
           className="text-white text-[15px] w-full h-[32px] rounded-md border-2 border-[#474747] bg-[#1E212B]"
         >
-          {multipleEvents[category as keyof typeof multipleEvents]?.map((ele: IMultiEvent, index: number) => (
-            <option key={index} value={ele.name}>
-              {ele.name}
-            </option>
-          ))}
+          {multipleEvents[category as keyof typeof multipleEvents]?.map(
+            (ele: IMultiEvent, index: number) => (
+              <option key={index} value={ele.name}>
+                {ele.name}
+              </option>
+            )
+          )}
         </Select>
 
         {/* Team Name and Team Lead Name */}
@@ -174,7 +184,12 @@ const MultipleForm = ({ category }: {
             </LabelInputContainer>
             <div className="flex items-center gap-2 w-full">
               <LabelInputContainer>
-                <Label htmlFor="memberInfo">Team Member{"'"}s {category === "Esports" && event.name === "BGMI" ? "Game ID" : "Email"}</Label>
+                <Label htmlFor="memberInfo">
+                  Team Member{"'"}s{" "}
+                  {category === "Esports" && event.name === "BGMI"
+                    ? "Game ID"
+                    : "Email"}
+                </Label>
                 <Input
                   id="memberInfo"
                   placeholder="After adding this, press + icon 👉"
@@ -188,19 +203,23 @@ const MultipleForm = ({ category }: {
                 size={32}
                 onClick={() => {
                   if (event.max === members.length) {
-                    alert("Max members reached")
-                    return
+                    alert("Max members reached");
+                    return;
                   }
 
-                  if (watch("memberName") === "" || watch("memberInfo") === "") return
+                  if (watch("memberName") === "" || watch("memberInfo") === "")
+                    return;
 
-                  const memberName = watch("memberName")!
-                  const memberInfo = watch("memberInfo")!
+                  const memberName = watch("memberName")!;
+                  const memberInfo = watch("memberInfo")!;
 
-                  setMembers([...members, { name: memberName, info: memberInfo }])
+                  setMembers([
+                    ...members,
+                    { name: memberName, info: memberInfo },
+                  ]);
 
-                  setValue("memberName", "")
-                  setValue("memberInfo", "")
+                  setValue("memberName", "");
+                  setValue("memberInfo", "");
                 }}
               />
             </div>
@@ -209,14 +228,19 @@ const MultipleForm = ({ category }: {
 
         <div className="flex items-center flex-wrap gap-5 my-5 w-full">
           {members?.map((ele, index) => (
-            <div key={index} className="text-white bg-[#27272A] w-fit px-5 py-2 rounded-md relative">
-              <span>{ele.name}, {ele.info}</span>
+            <div
+              key={index}
+              className="text-white bg-[#27272A] w-fit px-5 py-2 rounded-md relative"
+            >
+              <span>
+                {ele.name}, {ele.info}
+              </span>
               <LuXCircle
                 color="red"
                 className="absolute -top-2 -right-2 cursor-pointer"
                 size={18}
                 onClick={() => {
-                  setMembers(prev => prev.filter((_, i) => i !== index))
+                  setMembers((prev) => prev.filter((_, i) => i !== index));
                 }}
               />
             </div>
@@ -228,10 +252,20 @@ const MultipleForm = ({ category }: {
         <button
           className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
-          disabled={members.length < event.min || members.length > event.max || isSubmitting}
+          disabled={
+            members.length < event.min ||
+            members.length > event.max ||
+            isSubmitting
+          }
         >
-          {isSubmitting ? <Loader2 className="animate-spin" color="white" /> : <span>Register &rarr;</span>}
-          {members.length >= event.min && members.length <= event.max && !isSubmitting && <BottomGradient />}
+          {isSubmitting ? (
+            <Loader2 className="animate-spin" color="white" />
+          ) : (
+            <span>Register &rarr;</span>
+          )}
+          {members.length >= event.min &&
+            members.length <= event.max &&
+            !isSubmitting && <BottomGradient />}
         </button>
 
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />

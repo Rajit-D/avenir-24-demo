@@ -13,11 +13,10 @@ import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { singleEvents } from "@/utils/single";
 
-const SingleForm = ({ category }: {
-  category: string;
-}) => {
-
-  const [event, setEvent] = React.useState<ISingleEvent>(singleEvents[category as keyof typeof singleEvents][0]);
+const SingleForm = ({ category }: { category: string }) => {
+  const [event, setEvent] = React.useState<ISingleEvent>(
+    singleEvents[category as keyof typeof singleEvents][0]
+  );
 
   const {
     register,
@@ -29,51 +28,61 @@ const SingleForm = ({ category }: {
     resolver: zodResolver(soloEventSchema),
     defaultValues: {
       payment: "",
-    }
+    },
   });
 
   // Change any here
   const onsubmit = async (data: TSoloEventSchema) => {
-
-    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/registration/single`, data)
+    const res = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/registration/single`,
+      data
+    );
 
     if (res.status === 200) {
-      alert("Registered successfully")
-      reset()
+      alert("Registered successfully");
+      reset();
     }
-
   };
 
   return (
-    <div className="max-w-3xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black h-[700px] overflow-y-auto">
+    <div className="max-w-3xl w-full mx-auto h-[100%] rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black overflow-y-auto">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Register for {category} event
       </h2>
       <div className="flex items-center gap-2 text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
         <p>Amount to be paid:</p>
-        <p className="flex items-center"><LuIndianRupee />{event.price} </p>
+        <p className="flex items-center">
+          <LuIndianRupee />
+          {event.price}{" "}
+        </p>
       </div>
 
       <form className="my-8" onSubmit={handleSubmit(onsubmit)}>
         <Select
           name="event"
           register={register}
-          defaultValue={singleEvents[category as keyof typeof singleEvents][0].name}
+          defaultValue={
+            singleEvents[category as keyof typeof singleEvents][0].name
+          }
           onChange={(e) => {
-            let eventName = e.target.value
-            singleEvents[category as keyof typeof singleEvents].find(ele => ele.name === eventName && setEvent(ele))
+            let eventName = e.target.value;
+            singleEvents[category as keyof typeof singleEvents].find(
+              (ele) => ele.name === eventName && setEvent(ele)
+            );
           }}
-          className="text-white text-[15px] w-full h-[32px] rounded-md border-2 border-[#474747] bg-[#1E212B] my-5"
+          className="text-white text-[15px] w-full h-full rounded-md border-2 border-[#474747] bg-[#1E212B]"
         >
-          {singleEvents[category as keyof typeof singleEvents]?.map((ele: ISingleEvent, index: number) => (
-            <option key={index} value={ele.name}>
-              {ele.name}
-            </option>
-          ))}
+          {singleEvents[category as keyof typeof singleEvents]?.map(
+            (ele: ISingleEvent, index: number) => (
+              <option key={index} value={ele.name}>
+                {ele.name}
+              </option>
+            )
+          )}
         </Select>
 
         {/* Team Name and Team Lead Name */}
-        <div className="flex flex-col lg:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+        <div className="flex flex-col lg:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4 mt-4">
           <LabelInputContainer>
             <Label htmlFor="name">Name</Label>
             <Input
@@ -143,7 +152,11 @@ const SingleForm = ({ category }: {
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? <Loader2 className="animate-spin" color="white" /> : <span>Register &rarr;</span>}
+          {isSubmitting ? (
+            <Loader2 className="animate-spin" color="white" />
+          ) : (
+            <span>Register &rarr;</span>
+          )}
           {!isSubmitting && <BottomGradient />}
         </button>
 
