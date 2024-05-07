@@ -61,7 +61,7 @@ const MultipleForm = ({ category }: { category: string }) => {
   };
 
   return (
-    <div className="max-w-3xl w-full mx-auto h-full rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black h-[100%] overflow-y-auto">
+    <div className="max-w-3xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black h-[100%] overflow-y-auto">
       <Toaster />
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Register for {category} event

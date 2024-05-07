@@ -65,13 +65,19 @@ function Navbar() {
           </div>
           <div className="flex md:flex-row flex-col justify-center items-center md:px-5 relative md:left-[6%] md:top-0 top-6">
             <li className="">
-              <Link href="/">Home</Link>
+              <Link href="/" onClick={handleNav}>
+                Home
+              </Link>
             </li>
             <li className="md:mb-0 md:mt-0 mb-5 mt-5 md:ml-5 md:mr-5 ml-0 mr-0">
-              <Link href="/events">Events</Link>
+              <Link href="/events" onClick={handleNav}>
+                Events
+              </Link>
             </li>
             <li className="">
-              <Link href="/teams">Teams</Link>
+              <Link href="/teams" onClick={handleNav}>
+                Teams
+              </Link>
             </li>
           </div>
           <div className="flex flex-row justify-center items-center relative md:right-[8%] right-0 md:top-[0px] top-[100px]">
