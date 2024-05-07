@@ -44,7 +44,7 @@ const Page = ({ params }: { params: { eventCategory: string } }) => {
 
   return (
     <div className="text-black w-screen md:h-auto h-auto flex justify-center items-between bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
-      <div className="flex justify-center items-center w-screen flex-col mb-10 md:mt-[150px] mt-[100px] mb-[120px]">
+      <div className="flex justify-center items-center w-screen flex-col md:mt-[150px] mt-[100px] mb-[120px]">
         <p className="font-strike text-[#FF3131] md:text-[55px] text-[45px]">
           {params.eventCategory}
         </p>
@@ -52,25 +52,51 @@ const Page = ({ params }: { params: { eventCategory: string } }) => {
           <Loading />
         ) : (
           <div className="flex justify-around items-center w-screen md:flex-row flex-col">
-            {wingDetails?.wings.length > 0 ? ( // Check if wings array is not empty
-              <div className="flex justify-center items-center flex-col">
-                <Image
-                  src={wingDetails?.wings[0].wingPoster}
-                  alt=""
-                  width={500}
-                  height={900}
-                  className="mt-[80px] md:h-[400px] h-[300px] md:w-[350px] w-[250px]"
-                />
-                <div className="text-white text-wrap md:w-[400px] flex justify-center items-center flex-col text-center mt-[20px]">
-                  <p className="m-2">{wingDetails.wings[0].wingDescription}</p>
-                  <Modal para={wingDetails.wings[0].modalText} />
+            {wingDetails?.wings.length > 0 ? (
+              // Check if wings array is not empty
+              <div className="flex justify-around items-center md:flex-row flex-col w-screen">
+                <div className="flex justify-center items-center flex-col">
+                  <Image
+                    src={wingDetails?.wings[0].wingPoster}
+                    alt=""
+                    width={500}
+                    height={900}
+                    className="mt-[80px] md:h-[400px] h-[300px] md:w-[350px] w-[250px]"
+                  />
+                  <div className="text-white text-wrap md:w-[400px] flex justify-center items-center flex-col text-center mt-[20px]">
+                    <p className="m-2">
+                      {wingDetails.wings[0].wingDescription}
+                    </p>
+                    <Modal para={wingDetails.wings[0].modalText} />
+                  </div>
+                </div>
+                <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0 mt-[80px]">
+                  {wingDetails?.events.map((event: Event) => (
+                    <EventsCard
+                      key={event._id}
+                      name={event.eventName}
+                      description={event.description}
+                      id={event._id}
+                      category={params.eventCategory}
+                    />
+                  ))}
                 </div>
               </div>
             ) : (
-              <p>No wing details available.</p>
+              <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0 mt-[80px]">
+                  {wingDetails?.events.map((event: Event) => (
+                    <EventsCard
+                      key={event._id}
+                      name={event.eventName}
+                      description={event.description}
+                      id={event._id}
+                      category={params.eventCategory}
+                    />
+                  ))}
+                </div>
             )}
 
-            <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0 mt-[80px]">
+            {/* <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0 mt-[80px]">
               {wingDetails?.events.map((event: Event) => (
                 <EventsCard
                   key={event._id}
@@ -80,7 +106,7 @@ const Page = ({ params }: { params: { eventCategory: string } }) => {
                   category={params.eventCategory}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         )}
       </div>
