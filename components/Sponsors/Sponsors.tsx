@@ -11,7 +11,7 @@ const Sponsors = () => {
     <div className="md:w-full w-[70%] flex justify-center items-center flex-col mx-auto px-5 relative md:top-[70px] mb-[70px]">
       <div className="flex flex-col justify-center items-center">
         <div className="text-center">
-          <h2 className="text-red-400 md:text-[30px] text-[20px] font-strike">
+          <h2 className="text-red-400 md:text-[30px] text-[22px] font-strike">
             Our Sponsors
           </h2>
 
