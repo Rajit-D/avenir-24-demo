@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { IoCalendarOutline, IoPersonSharp } from "react-icons/io5";
-import { RiTeamFill } from "react-icons/ri";
 import { MdEmojiEvents, MdDescription } from "react-icons/md";
 import Link from "next/link";
 import { multipleEventsArray } from "@/utils/multi";
+import { singleEventsArray } from "@/utils/single";
 import { useRouter } from "next/navigation";
 import { eventNames } from "process";
+import { FaMoneyBillAlt } from "react-icons/fa";
 
 // Define the EventData interface
 interface EventData {
@@ -37,12 +38,18 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
   if (!eventData) return null;
 
   const handleClick = (eventName: any) => {
+    console.log(eventName);
     if (multipleEventsArray.includes(eventName)) {
       router.push(`/multipleForm/${eventCategory}`);
-    }
-    else{
+    } else if (singleEventsArray.includes(eventName)) {
       router.push(`/singleForm/${eventCategory}`);
-    }
+    } else if (eventName === "Innovatrix (Hackathon)")
+      window.open(
+        "https://unstop.com/p/innovatrix24-netaji-subhash-engineering-college-980862"
+      );
+      else if(eventName=== "Human Ludo"){
+        router.push(`/singleForm/humanLudo`)
+      }
   };
 
   return (
@@ -67,7 +74,11 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
                 <IoCalendarOutline className="text-[20px]" />
                 &nbsp; <b>Event Date :</b>&nbsp; {eventData.date}
               </p>
-              {/* Render other event details */}
+              <p className="flex mt-2">
+                <FaMoneyBillAlt className="text-[20px]" />
+                &nbsp; <b>Registration fees :</b>&nbsp;{" "}
+                {eventData.registrationFees}
+              </p>
             </div>
             <div className="ml-5 mr-5 mt-5 p-3">
               <p className="flex">

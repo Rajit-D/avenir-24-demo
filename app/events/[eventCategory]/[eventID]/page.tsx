@@ -54,6 +54,7 @@ const Page = ({
     //   // Cleanup code
     // };
   }, [params.eventCategory, params.eventID]); // Dependency array including eventCategory and eventID
+  console.log(eventData);
 
   return (
     <div>
@@ -61,7 +62,10 @@ const Page = ({
         <Loading />
       ) : (
         <div>
-          <EventsPage eventData={eventData} eventCategory={params.eventCategory} />
+          <EventsPage
+            eventData={eventData}
+            eventCategory={params.eventCategory}
+          />
         </div>
       )}
     </div>

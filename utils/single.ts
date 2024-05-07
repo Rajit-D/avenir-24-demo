@@ -45,8 +45,26 @@ export const singleEvents = {
       price: 400,
     },
     {
-      name: "Sell or solve",
+      name: "Sell or Solve",
+      price: 0,
+    },
+    {
+      name: "Ideathon",
       price: 0,
     },
   ],
 };
+
+export const singleEventsArray = [
+  "Quantum Quills ",
+  "Infinite Ingenuity ",
+  "CAD Clash",
+  "Insta Click",
+  "Reel Revolutionaries",
+  "Meta Art",
+  "UX FACTOR",
+  "STACK OVERFLOW",
+  "MODEL UNITED NATIIONS",
+  "Sell or Solve",
+  "Ideathon",
+];

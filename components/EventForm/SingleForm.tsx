@@ -47,6 +47,7 @@ const SingleForm = ({ category }: { category: string }) => {
       reset();
     }
   };
+  console.log(event);
 
   return (
     <div className="max-w-3xl w-full mx-auto h-[100%] rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black overflow-y-auto">
@@ -54,13 +55,13 @@ const SingleForm = ({ category }: { category: string }) => {
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Register for {category} event
       </h2>
-      <div className="flex items-center gap-2 text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+      {/* <div className="flex items-center gap-2 text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
         <p>Amount to be paid:</p>
         <p className="flex items-center">
           <LuIndianRupee />
           {event.price}{" "}
         </p>
-      </div>
+      </div> */}
 
       <div className="flex justify-between items-center flex-col w-[100%] mt-[10px]">
         <div className="flex justify-between items-center lg:flex-row flex-col-reverse w-full">
