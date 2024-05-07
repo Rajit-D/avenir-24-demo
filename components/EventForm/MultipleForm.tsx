@@ -46,7 +46,7 @@ const MultipleForm = ({ category }: { category: string }) => {
     };
 
     const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/registration/multi`,
+      `https://avenir24-backend.vercel.app/api/v1/registration/multi`,
       toUpload
     );
 
