@@ -207,7 +207,7 @@ export default function LandingPage() {
               <div className="h-screen w-screen flex justify-center items-center flex-col mt-[80px] md:mt-0">
                 <div className="flex justify-center items-center flex-col md:mb-[0px] mb-[80px]">
                   <div className="flex justify-center items-center flex-col mb-5">
-                    <p className="font-strike md:text-[30px] text-[20px] text-center text-red-400 text-wrap">
+                    <p className="font-strike md:text-[30px] text-[22px] text-center text-red-400 text-wrap">
                       Our Statistics over the years
                     </p>
                     <Statistics />
