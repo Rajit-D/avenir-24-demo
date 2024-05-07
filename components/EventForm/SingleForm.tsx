@@ -12,7 +12,9 @@ import FileUpload from "../FileUpload/FileUpload";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { singleEvents } from "@/utils/single";
-import { ToastContainer, toast } from "react-toastify";
+import { Toaster, toast } from "sonner";
+import Image from "next/image";
+import qr from "../../public/assets/qr.jpg";
 
 const SingleForm = ({ category }: { category: string }) => {
   const [event, setEvent] = React.useState<ISingleEvent>(
@@ -41,14 +43,14 @@ const SingleForm = ({ category }: { category: string }) => {
 
     if (res.status === 200) {
       // alert("Registered successfully");
-      toast("Registered Successfully! 🤖");
+      toast("Registered successfully! 🤖");
       reset();
     }
   };
 
   return (
     <div className="max-w-3xl w-full mx-auto h-[100%] rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black overflow-y-auto">
-      <ToastContainer />
+      <Toaster/>
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Register for {category} event
       </h2>
@@ -58,6 +60,39 @@ const SingleForm = ({ category }: { category: string }) => {
           <LuIndianRupee />
           {event.price}{" "}
         </p>
+      </div>
+
+      <div className="flex justify-between items-center flex-col w-[100%] mt-[10px]">
+        <div className="flex justify-between items-center lg:flex-row flex-col-reverse w-full">
+          <div className="lg:mt-0 mt-4 text-white">
+            <p>
+              UPI id: <b>roy01ann.esha@oksbi</b>
+            </p>
+            <br />
+            <p>For any issues contact:</p>
+            <p>
+              Annesha Roy (<i>Treasurer</i>)
+            </p>
+            <p>
+              Mobile number: <b>7407984987</b>
+            </p>
+          </div>
+          <Image src={qr} alt="QR code" height={150} width={150} />
+        </div>
+        <div className="notes w-[109%] text-white">
+          <div className="flex items-center flex-col mt-[30px] text-center">
+            <b>Note:</b>
+            <li className="text-[14px]">
+              <i>Take a screenshot of the successful payment.</i>
+            </li>
+            <li className="text-[14px]">
+              <i>Participant must specify the event name when paying</i>
+            </li>
+            <li className="text-[14px]">
+              <i>The registration fee amount is non-refundable.</i>
+            </li>
+          </div>
+        </div>
       </div>
 
       <form className="my-8" onSubmit={handleSubmit(onsubmit)}>

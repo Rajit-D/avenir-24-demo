@@ -12,6 +12,9 @@ import { LuIndianRupee, LuPlusCircle, LuXCircle } from "react-icons/lu";
 import FileUpload from "../FileUpload/FileUpload";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
+import { Toaster, toast } from "sonner";
+import Image from "next/image";
+import qr from "../../public/assets/qr.jpg";
 
 const MultipleForm = ({ category }: { category: string }) => {
   const [event, setEvent] = React.useState<IMultiEvent>(
@@ -51,13 +54,15 @@ const MultipleForm = ({ category }: { category: string }) => {
     );
 
     if (res.status === 200) {
-      alert("Registered successfully");
+      // alert("Registered successfully");
+      toast("Registered successfully! 🤖");
       reset();
     }
   };
 
   return (
-    <div className="max-w-3xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black h-[100%] overflow-y-auto">
+    <div className="max-w-3xl w-full mx-auto h-full rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black h-[100%] overflow-y-auto">
+      <Toaster />
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Register for {category} event
       </h2>
@@ -67,6 +72,39 @@ const MultipleForm = ({ category }: { category: string }) => {
           <LuIndianRupee />
           {event.price}{" "}
         </p>
+      </div>
+
+      <div className="flex justify-between items-center flex-col w-[100%] mt-[10px]">
+        <div className="flex justify-between items-center lg:flex-row flex-col-reverse w-full">
+          <div className="lg:mt-0 mt-4 text-white">
+            <p>
+              UPI id: <b>roy01ann.esha@oksbi</b>
+            </p>
+            <br />
+            <p>For any issues contact:</p>
+            <p>
+              Annesha Roy (<i>Treasurer</i>)
+            </p>
+            <p>
+              Mobile number: <b>7407984987</b>
+            </p>
+          </div>
+          <Image src={qr} alt="QR code" height={150} width={150} />
+        </div>
+        <div className="notes w-[100%] text-white">
+          <div className="flex items-start flex-col mt-[30px]">
+            <b>Note:</b>
+            <li className="text-[14px]">
+              <i>Take a screenshot of the successful payment.</i>
+            </li>
+            <li className="text-[14px]">
+              <i>Participants must specify the event name when paying</i>
+            </li>
+            <li className="text-[14px]">
+              <i>The registration fee amount is non-refundable.</i>
+            </li>
+          </div>
+        </div>
       </div>
 
       <form className="my-8" onSubmit={handleSubmit(onsubmit)}>
@@ -110,7 +148,7 @@ const MultipleForm = ({ category }: { category: string }) => {
               <Label htmlFor="teamLeaderName">Team Lead Name</Label>
               <Input
                 id="teamLeaderName"
-                placeholder="Megatron's Dad"
+                placeholder="BumbleBee"
                 type="text"
                 name="teamLeaderName"
                 register={register}

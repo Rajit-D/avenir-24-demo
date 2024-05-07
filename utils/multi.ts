@@ -28,7 +28,7 @@ export const multipleEvents = {
   ],
   esports: [
     {
-      name: "E-Football",
+      name: "eFootball (PES Mobile)",
       min: 5,
       max: 5,
       price: 200,
@@ -48,7 +48,7 @@ export const multipleEvents = {
       price: 200,
     },
     {
-      name: "Cosmic Conundrum",
+      name: "Cosmic Conundrum ",
       min: 2,
       max: 2,
       price: 150,
@@ -56,7 +56,7 @@ export const multipleEvents = {
   ],
   nirman: [
     {
-      name: "Bridge-o-mania",
+      name: "Bridge-O-Mania",
       min: 2,
       max: 3,
       price: 120,
@@ -83,11 +83,11 @@ export const multipleEventsArray = [
   "Terra Rover",
   "Robo War",
   "COMBO 1 (Robo Soccer, Robo Kombat, Terra Rover)",
-  "E-Football",
+  "eFootball (PES Mobile)",
   "BGMI",
   "Dimensional Discourse",
-  "Cosmic Conundrum",
-  "Bridge-o-mania",
+  "Cosmic Conundrum ",
+  "Bridge-O-Mania",
   "Treasure Hunt",
   "Beg! Borrow! Steal!",
 ];

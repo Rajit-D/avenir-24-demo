@@ -1,11 +1,11 @@
 export const singleEvents = {
   eloquense: [
     {
-      name: "Quantum Quills",
+      name: "Quantum Quills ",
       price: 100,
     },
     {
-      name: "Infinite Ingenuity",
+      name: "Infinite Ingenuity ",
       price: 100,
     },
   ],
@@ -21,7 +21,7 @@ export const singleEvents = {
       price: 80,
     },
     {
-      name: "Reel revolutionaries",
+      name: "Reel Revolutionaries",
       price: 80,
     },
     {
@@ -31,17 +31,17 @@ export const singleEvents = {
   ],
   cybernix: [
     {
-      name: "UX Factor",
+      name: "UX FACTOR",
       price: 30,
     },
     {
-      name: "Stack Overflow",
+      name: "STACK OVERFLOW",
       price: 30,
     },
   ],
   flagship: [
     {
-      name: "MUN (Model United Nations)",
+      name: "MODEL UNITED NATIIONS",
       price: 400,
     },
     {
