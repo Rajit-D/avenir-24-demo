@@ -20,7 +20,7 @@ export const multipleEvents = {
       price: 500,
     },
     {
-      name: "COMBO 1 (Robo Soccer, Robo Kombat, Terra Rover)",
+      name: "COMBO 1 (Robo Soccer, Robo War, Terra Rover)",
       min: 1,
       max: 4,
       price: 1150,
