@@ -26,7 +26,7 @@ export const multipleEvents = {
       price: 1150,
     },
   ],
-  esports: [
+  eSports: [
     {
       name: "eFootball (PES Mobile)",
       min: 5,
