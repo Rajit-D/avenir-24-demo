@@ -99,17 +99,6 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="h-screen w-screen flex justify-center items-center">
-                <div className="w-full absolute inset-0 h-full">
-                  <SparklesCore
-                    id="tsparticlesfullpage"
-                    background="transparent"
-                    minSize={0.6}
-                    maxSize={1.4}
-                    particleDensity={70}
-                    className="w-full h-full"
-                    particleColor="#FFFFFF"
-                  />
-                </div>
                 <div className="flex">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
@@ -125,7 +114,7 @@ export default function LandingPage() {
                         <p className="font-strike text-red-400 md:text-[30px] text-[20px] md:pb-7">
                           About the theme
                         </p>
-                        <p className="font-strike-light text-white md:text-left text-center md:text-[16px] text-[10px]">
+                        <p className="font-mont text-white md:text-left text-center md:text-[21px] text-[14px]">
                           The metaverse is a persistent, interconnected virtual
                           reality where users can interact, create, and explore
                           through their digital avatars. It represents the
@@ -166,20 +155,8 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="h-screen w-screen flex justify-center items-center">
-                <div className="w-full absolute inset-0 h-screen">
-                  <SparklesCore
-                    id="tsparticlesfullpage"
-                    background="transparent"
-                    minSize={0.6}
-                    maxSize={1.4}
-                    particleDensity={70}
-                    className="w-full h-full"
-                    particleColor="#FFFFFF"
-                  />
-                </div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
-                  // animate={{ opacity: 1, scale: 1 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.5,
@@ -192,7 +169,7 @@ export default function LandingPage() {
                       <p className="font-strike text-red-400 md:text-[30px] text-[20px] md:pb-7 text-right">
                         About Avenir
                       </p>
-                      <p className="font-strike-light text-white md:text-[16px] md:text-left text-center text-[10px]">
+                      <p className="font-mont text-white md:text-[21px] md:text-left text-center text-[14px]">
                         Avenir is the largest Tech Fest in Kolkata, organised by
                         Phoenix – The official Tech club of Netaji Subhash
                         Engineering College. Avenir’ 24 is a 3 days program with
@@ -228,18 +205,7 @@ export default function LandingPage() {
                 </motion.div>
               </div>
               <div className="h-screen w-screen flex justify-center items-center flex-col mt-[80px] md:mt-0">
-                <div className="w-full absolute inset-0 h-screen">
-                  <SparklesCore
-                    id="tsparticlesfullpage"
-                    background="transparent"
-                    minSize={0.6}
-                    maxSize={1.4}
-                    particleDensity={70}
-                    className="w-full h-full"
-                    particleColor="#FFFFFF"
-                  />
-                </div>
-                <div className="flex justify-center items-center flex-col md:mb-[0px] mb-[100px]">
+                <div className="flex justify-center items-center flex-col md:mb-[0px] mb-[80px]">
                   <div className="flex justify-center items-center flex-col mb-5">
                     <p className="font-strike md:text-[30px] text-[20px] text-center text-red-400 text-wrap">
                       Our Statistics over the years

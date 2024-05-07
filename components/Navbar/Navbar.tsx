@@ -83,17 +83,26 @@ function Navbar() {
           <div className="flex flex-row justify-center items-center relative md:right-[8%] right-0 md:top-[0px] top-[100px]">
             <ul className="flex text-[25px]">
               <li className="">
-                <Link href="https://www.instagram.com/phoenix_nsec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <Link
+                  href="https://www.instagram.com/phoenix_nsec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  target="blank"
+                >
                   <FiInstagram />
                 </Link>
               </li>
               <li className="">
-                <Link href="">
+                <Link
+                  href="https://www.linkedin.com/company/phoenix-the-official-tech-club-of-netaji-subhash-engineering-college/"
+                  target="blank"
+                >
                   <FiLinkedin />
                 </Link>
               </li>
               <li className="">
-                <Link href="">
+                <Link
+                  href="https://www.youtube.com/channel/UCBy1iIhw34E7YlHQ8tc4rDA"
+                  target="blank"
+                >
                   <FiYoutube />
                 </Link>
               </li>

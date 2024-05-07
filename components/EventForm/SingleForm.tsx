@@ -79,11 +79,17 @@ const SingleForm = ({ category }: { category: string }) => {
           </div>
           <Image src={qr} alt="QR code" height={150} width={150} />
         </div>
-        <div className="notes w-[109%] text-white">
-          <div className="flex items-center flex-col mt-[30px] text-center">
+        <div className="notes w-[100%] text-white">
+          <div className="flex items-start flex-col mt-[30px] text-center">
             <b>Note:</b>
             <li className="text-[14px]">
-              <i>Take a screenshot of the successful payment.</i>
+              <i>Solo events are free for Phoenix members.</i>
+            </li>
+            <li className="text-[14px]">
+              <i>Upload the screenshot of the successful payment.</i>
+            </li>
+            <li className="text-[14px]">
+              <i>For Phoenix members, upload your Phoenix membership card/payment slip.</i>
             </li>
             <li className="text-[14px]">
               <i>Participant must specify the event name when paying</i>
