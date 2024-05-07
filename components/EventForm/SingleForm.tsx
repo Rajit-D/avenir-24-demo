@@ -35,7 +35,7 @@ const SingleForm = ({ category }: { category: string }) => {
   // Change any here
   const onsubmit = async (data: TSoloEventSchema) => {
     const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/registration/single`,
+      `https://avenir24-backend.vercel.app/api/v1/registration/single`,
       data
     );
 
