@@ -29,14 +29,14 @@ export const multipleEvents = {
   eSports: [
     {
       name: "eFootball (PES Mobile)",
-      min: 5,
-      max: 5,
+      min: 1,
+      max: 1,
       price: 200,
     },
     {
       name: "BGMI",
-      min: 4,
-      max: 4,
+      min: 3,
+      max: 3,
       price: 200,
     },
   ],
