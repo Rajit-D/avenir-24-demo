@@ -43,7 +43,9 @@ const SingleForm = ({ category }: { category: string }) => {
 
     if (res.status === 200) {
       // alert("Registered successfully");
-      toast("Registered successfully! 🤖");
+      toast("Registered successfully! 🤖",{
+        description: 'We will reach out to you soon! ✅'
+      });
       reset();
     }
   };
