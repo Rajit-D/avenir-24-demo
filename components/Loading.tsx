@@ -4,7 +4,7 @@ import animation from "@/utils/loading.json";
 const Loading = () => {
   return (
     <div className="flex justify-center items-center h-dvh fixed inset-0">
-      <Lottie animationData={animation} loop={true} />
+      <Lottie animationData={animation} loop={true} autoPlay={true} />
       {/* <div role="status">
         <svg
           aria-hidden="true"
