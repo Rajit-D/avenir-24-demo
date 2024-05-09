@@ -7,8 +7,16 @@ import { Footer } from "@/components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AVENIR'24",
-  description: "The official tech fest of PHOENIX",
+  metadataBase: new URL("https://www.avenirnsec.live"),
+  keywords: ["Avenir", "avenir","avenirnsec", "avenir nsec", "avenirnsec24", "Avenir 24", "avenir 24", "avenir nsec 24"],
+  title: {
+    default:"AVENIR'24",
+    template: `%s | AVENIR'24`
+  },
+  openGraph:{
+    description:"The official tech fest of PHOENIX",
+    images:['https://www.avenirnsec.live/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.a2374b39.png&w=1920&q=75']
+  }
 };
 
 export default function RootLayout({
