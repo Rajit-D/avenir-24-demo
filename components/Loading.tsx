@@ -3,8 +3,13 @@ import Lottie from "lottie-react";
 import animation from "@/utils/loading.json";
 const Loading = () => {
   return (
-    <div className="flex justify-center items-center h-dvh fixed inset-0">
-      <Lottie animationData={animation} loop={true} autoPlay={true} />
+    <div className="flex justify-center items-center h-[calc(100dvh-99.41px)]">
+      <Lottie
+        animationData={animation}
+        style={{ width: "300px", height: "300px" }}
+        loop={true}
+        autoPlay={true}
+      />
       {/* <div role="status">
         <svg
           aria-hidden="true"
