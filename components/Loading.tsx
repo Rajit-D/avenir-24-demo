@@ -1,9 +1,11 @@
 import React from "react";
-
+import Lottie from "lottie-react";
+import animation from "@/utils/loading.json";
 const Loading = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div role="status">
+    <div className="flex justify-center items-center h-dvh fixed inset-0">
+      <Lottie animationData={animation} loop={true} />
+      {/* <div role="status">
         <svg
           aria-hidden="true"
           className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -21,7 +23,7 @@ const Loading = () => {
           />
         </svg>
         <span className="sr-only">Loading...</span>
-      </div>
+      </div> */}
     </div>
   );
 };

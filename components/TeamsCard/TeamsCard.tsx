@@ -8,9 +8,9 @@ const TeamsCard = () => {
   return (
     <BackgroundGradient className="rounded-[22px] overflow-y-scroll p-4 sm:p-1 bg-[#1B1B1E]">
       <div className="flex flex-row justify-around  p-2 mx-auto w-[400px] text-center text-white rounded-[22px]">
-        <div className="h-min w-fit rounded-lg">
+        <div className="h-min w-fit overflow-hidden rounded-lg">
           <img
-            className="h-[150px] w-[160px] rounded-lg hover:scale-110 blur-[0.5px] hover:blur-none transition-all object-cover object-center duration-500 cursor-pointer"
+            className="h-[150px] w-[160px] rounded-lg hover:scale-125 blur-[0.5px] hover:blur-none ease-in-out transition-all object-cover object-center duration-500 cursor-pointer"
             src="https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg"
             alt=""
           />

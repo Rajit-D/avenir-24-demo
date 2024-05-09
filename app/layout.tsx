@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.avenirnsec.live"),
-  keywords: ["Avenir", "avenir","avenirnsec", "avenir nsec", "avenirnsec24", "Avenir 24", "avenir 24", "avenir nsec 24"],
+  keywords: ["Avenir'24", "avenirnsec", "avenir nsec", "avenirnsec24", "Avenir 24", "avenir 24", "avenir nsec 24", "Avenir", "avenir"],
   title: {
     default:"AVENIR'24",
     template: `%s | AVENIR'24`
