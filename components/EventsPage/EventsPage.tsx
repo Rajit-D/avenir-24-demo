@@ -54,7 +54,7 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
 
   return (
     <div className="text-black w-screen md:h-auto h-auto flex justify-center items-center bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
-      <div className="text-white md:mt-[150px] mt-[120px] flex justify-center items-center flex-col md:w-[70%] mb-[100px]">
+      <div className="text-whit flex justify-center items-center flex-col">
         <h2 className="font-strike text-[35px] mb-[10px] text-center">
           {eventData.eventName}
         </h2>

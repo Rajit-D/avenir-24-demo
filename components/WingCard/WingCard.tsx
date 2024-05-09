@@ -19,7 +19,7 @@ const WingCard = ({ wing, url, desc }: Props) => {
         <h2 className="text-[20px] font-strike">{wing}</h2>
         <p className="font-mont">{desc}</p>
         <div className="card-actions justify-end">
-          <button className="btn text-black bg-[#FF3131] font-mont border-none">Register!</button>
+          <button className="btn  bg-[#FF3131] text-white font-mont border-none hover:text-[#FF3131] hover:bg-white transition-all ease-in-out duration-500 hover:scale-110">Register!</button>
         </div>
       </div>
     </div>

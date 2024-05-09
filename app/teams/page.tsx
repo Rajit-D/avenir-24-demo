@@ -3,8 +3,8 @@ import React from "react";
 
 const Teams = () => {
   return (
-    <div className="w-screen md:h-screen h-screen flex justify-center items-center bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
-      {/* <div className="grid md:grid-cols-3 grid-cols-1 md:gap-20 gap-4 mt-[200px]">
+    <div className="w-dvw lg:flex justify-center items-center bg-opacity-20 lg:pt-0 z-2 h-dvh overflow-y-auto backdrop-brightness-100 backdrop-blur-[1.7px]">
+      {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 py-10 px-5 md:px-12 lg:px-36 grid-cols-1 md:gap-20 lg:gap-12 gap-4 md:mt-20 lg:mt-[200px] w-full">
       <TeamsCard/>
       <TeamsCard/>
       <TeamsCard/>

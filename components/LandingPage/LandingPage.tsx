@@ -49,7 +49,7 @@ export default function LandingPage() {
     startTimer();
   });
   return (
-    <div className="h-screen w-screen">
+    <div className="h-full w-full">
       <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
         <ScrollControls pages={4} damping={0.1}>
           <Blob />
