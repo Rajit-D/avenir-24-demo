@@ -36,7 +36,7 @@ export const multipleEvents = {
     {
       name: "BGMI",
       min: 3,
-      max: 3,
+      max: 4,
       price: 200,
     },
   ],
