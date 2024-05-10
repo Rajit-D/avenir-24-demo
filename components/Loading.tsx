@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import animation from "@/utils/loading.json";
 const Loading = () => {
   return (
-    <div className="flex justify-center items-center h-[calc(100dvh-99.41px)]">
+    <div className="flex justify-center items-center h-dvh">
       <Lottie
         animationData={animation}
         style={{ width: "300px", height: "300px" }}
