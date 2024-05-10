@@ -43,7 +43,7 @@ const Page = ({ params }: { params: { eventCategory: string } }) => {
   }, [params.eventCategory]);
 
   return (
-    <div className="text-black md:mt-[99.41px] w-dvw h-auto md:h-[calc(100dvh-99.41px)] flex justify-center items-between bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
+    <div className="text-black pt-8 md:mt-[99.41px] w-dvw h-auto md:h-[calc(100dvh-99.41px)] flex justify-center items-between bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
       <div className="flex items-center w-full pb-10 flex-col h-full overflow-y-auto">
         <p className="font-strike text-[#FF3131] md:text-[55px] text-[45px]">
           {params.eventCategory}
