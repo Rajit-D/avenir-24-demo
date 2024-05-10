@@ -53,13 +53,13 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
   };
 
   return (
-    <div className="text-black w-screen md:h-auto h-auto flex justify-center items-center bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
-      <div className="text-whit flex justify-center items-center flex-col">
-        <h2 className="font-strike text-[35px] mb-[10px] text-center">
+    <div className="text-white md:mt-[99.41px] w-dvw h-auto md:h-[calc(100dvh-99.41px)] flex justify-center items-between bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
+      <div className="flex items-center w-full pb-10 flex-col h-full overflow-y-auto">
+         <h2 className="font-strike text-[35px] mb-[10px] text-center">
           {eventData.eventName}
         </h2>
-        <div className="flex justify-center items-center md:flex-row flex-col mt-[20px]">
-          <div className="w-full flex justify-center items-center">
+        <div className="flex justify-center items-center md:flex-row flex-col">
+          <div className="w-full  flex justify-center items-center">
             <Image
               src={eventData.eventPoster}
               height={800}
@@ -68,7 +68,7 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
               className="md:h-[430px] h-[330px] md:w-[380px] w-[300px]"
             />
           </div>
-          <div className="font-mont">
+          <div className="font-mont text-white">
             <div className="m-5 p-3">
               <p className="flex">
                 <IoCalendarOutline className="text-[20px]" />
@@ -109,7 +109,7 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
             </div>
           </div>
         </div>
-        <div className="md:mt-[60px] mt-[40px] flex justify-around items-center w-[100%] md:flex-row flex-col">
+        <div className="py-6 flex justify-around items-center w-[100%] md:flex-row flex-col">
           <Link href={eventData.rulebook} target="blank">
             <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#FF3131,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-[200px] md:mb-0 mb-5 font-mont">
               View Rulebook
