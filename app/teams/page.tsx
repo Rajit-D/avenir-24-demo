@@ -1,22 +1,11 @@
-import TeamsCard from "@/components/TeamsCard/TeamsCard";
-import React from "react";
+import Teams from "@/components/TeamsCard/TeamsCard";
 
-const Teams = () => {
+export default async function page() {
+  const data = await fetch("https://661a370b125e9bb9f29b8cb1.mockapi.io/teams");
+  const members: Member[] = await data.json();
   return (
-    <div className="w-dvw lg:flex justify-center items-center bg-opacity-20 lg:pt-0 z-2 h-dvh overflow-y-auto backdrop-brightness-100 backdrop-blur-[1.7px]">
-      {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 py-10 px-5 md:px-12 lg:px-36 grid-cols-1 md:gap-20 lg:gap-12 gap-4 md:mt-20 lg:mt-[200px] w-full">
-      <TeamsCard/>
-      <TeamsCard/>
-      <TeamsCard/>
-      <TeamsCard/>
-      <TeamsCard/>
-      <TeamsCard/>
-      <TeamsCard/>
-      <TeamsCard/>
-      </div> */}
-      <h1 className="font-strike text-red-400 md:text-[80px] text-[50px] text-center text-wrap md:p-0 p-[10px]">This page is under progress</h1>
-    </div>
+    <main className="text-black pt-8 w-dvw overflow-y-auto md:h-dvh bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
+      <Teams members={members} />
+    </main>
   );
-};
-
-export default Teams;
+}

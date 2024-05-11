@@ -54,7 +54,7 @@ const Page = ({
     //   // Cleanup code
     // };
   }, [params.eventCategory, params.eventID]); // Dependency array including eventCategory and eventID
-  console.log(eventData);
+  // console.log(eventData);
 
   return (
     <div>
