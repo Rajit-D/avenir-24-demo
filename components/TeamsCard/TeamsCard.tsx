@@ -54,7 +54,7 @@ const Teams = ({ members }: { members: Member[] }) => {
                 />
               </div>
 
-              <div className="flex flex-col justify-center items-start ml-5 w-full">
+              <div className="flex flex-col justify-center items-start ml-5 w-[300px] overflow-x-auto">
                 <h3 className="text-2xl font-strike text-left">
                   {member.name}
                 </h3>
