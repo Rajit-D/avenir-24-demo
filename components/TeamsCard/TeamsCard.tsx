@@ -24,12 +24,12 @@ const Teams = ({ members }: { members: Member[] }) => {
   };
   return (
     <main className="md:pt-[99.41px]">
-      <div className="bg-slate-500 overflow-hidden bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px] text-white font-strike-light flex max-w-fit mx-auto rounded-lg">
+      <div className="bg-slate-500 sticky md:top-[99.41px] z-50 text-xs md:text-base overflow-hidden bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px] text-white font-strike-light flex max-w-fit mx-2 md:mx-auto rounded-lg">
         {teamSet.map((steam: string, index: number) => (
           <button
             key={index}
             className={cn(
-              "w-44 p-2 px-4",
+              "w-44 p-2 px-4 whitespace-nowrap",
               steam === team &&
                 "bg-white bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]"
             )}
@@ -39,7 +39,7 @@ const Teams = ({ members }: { members: Member[] }) => {
           </button>
         ))}
       </div>
-      <div className="grid md:grid-cols-2 items-center pb-8 lg:grid-cols-3 py-10 px-5 md:px-12 lg:px-36 grid-cols-1 md:gap-20 lg:gap-12 gap-4 w-full">
+      <div className="grid md:grid-cols-2 items-center pb-8 lg:grid-cols-3 pt-5 md:pt-8 px-5 md:px-12 lg:px-36 grid-cols-1 md:gap-20 lg:gap-12 gap-4 w-full">
         {filterMembers.map((member, index) => (
           <BackgroundGradient
             key={index}
