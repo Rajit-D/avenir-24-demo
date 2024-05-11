@@ -8,7 +8,7 @@ import { cn } from "@/utils/cn";
 const Teams = ({ members }: { members: Member[] }) => {
   const teamSet = ["Core Team", "Wing Lead", "Dev Team", "All"];
   const [filterMembers, setFilterMember] = useState<Member[]>(members);
-  const [team, setTeam] = useState<string>("Core Team");
+  const [team, setTeam] = useState<string>("All");
   const handleFilter = (steam: string) => {
     setTeam(steam);
     if (steam === "All") {
