@@ -27,6 +27,7 @@ const Teams = ({ members }: { members: Member[] }) => {
       <div className="bg-slate-500 overflow-hidden bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px] text-white font-strike-light flex max-w-fit mx-auto rounded-lg">
         {teamSet.map((steam: string, index: number) => (
           <button
+            key={index}
             className={cn(
               "w-44 p-2 px-4",
               steam === team &&
