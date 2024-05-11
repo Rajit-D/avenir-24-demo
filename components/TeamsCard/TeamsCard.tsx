@@ -5,7 +5,6 @@ import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { BackgroundGradient } from "../ui/background-gradient";
 import Link from "next/link";
 import { cn } from "@/utils/cn";
-
 const Teams = ({ members }: { members: Member[] }) => {
   const teamSet = ["Core Team", "Wing Lead", "Dev Team", "All"];
   const [filterMembers, setFilterMember] = useState<Member[]>(members);
