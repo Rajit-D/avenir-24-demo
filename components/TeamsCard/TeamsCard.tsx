@@ -56,17 +56,17 @@ const Teams = ({ members }: { members: Member[] }) => {
               </div>
 
               <div className="flex flex-col justify-center items-start ml-5 w-[300px] overflow-x-auto">
-                <h3 className="text-2xl font-strike text-left">
+                <h3 className="md:text-xl text-md font-strike text-left">
                   {member.name}
                 </h3>
-                <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <p className="font-light text-left font-mont text-gray-500 sm:text-lg dark:text-gray-400">
                   {member.designation}
                 </p>
                 <div className="mt-3 flex justify-around text-[25px] text-white">
                   {member.instagramURL !== "NA" && (
                     <Link href={member.instagramURL}>
                       <FaInstagram
-                        size={"1.8rem"}
+                        size={"1.5rem"}
                         className=" bg-gradient-to-tr from-yellow-300 via-pink-500 to-purple-500 rounded-md"
                       />
                     </Link>
@@ -74,7 +74,7 @@ const Teams = ({ members }: { members: Member[] }) => {
                   {member.linkedinURL !== "NA" && (
                     <Link href={member.linkedinURL}>
                       <FaLinkedinIn
-                        size={"1.8rem"}
+                        size={"1.5rem"}
                         className="ml-3 text-blue-500"
                       />
                     </Link>
@@ -82,7 +82,7 @@ const Teams = ({ members }: { members: Member[] }) => {
                   {member.facebookURL !== "NA" && (
                     <Link href={member.facebookURL}>
                       <FaFacebook
-                        size={"1.8rem"}
+                        size={"1.5rem"}
                         className="ml-3 text-blue-500"
                       />
                     </Link>
