@@ -61,7 +61,7 @@ const Page = ({ params }: { params: { eventCategory: string } }) => {
                     alt=""
                     width={500}
                     height={900}
-                    className="mt-[20px] md:h-[400px] h-[300px] md:w-[350px] w-[250px]"
+                    className="mt-[20px] md:h-[350px] h-[300px] md:w-[350px] w-[250px]"
                   />
                   <div className="text-white text-wrap md:w-[400px] flex justify-center items-center flex-col text-center mt-[20px]">
                     <p className="m-2">
