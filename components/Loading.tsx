@@ -6,7 +6,7 @@ const Loading = () => {
     <div className="flex justify-center items-center h-dvh">
       <Lottie
         animationData={animation}
-        style={{ width: "300px", height: "300px" }}
+        style={{ width: "200px", height: "200px" }}
         loop={true}
         autoPlay={true}
       />
