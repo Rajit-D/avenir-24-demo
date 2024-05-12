@@ -30,7 +30,7 @@ function Navbar() {
         )}
       </div>
       <div className="icon md:flex md:flex-col md:justify-center md:items-center hidden md:w-30 py:2 md:py-3 z-20 relative top-[12px] left-[7%]">
-        <Link href={"https://phoenixnsec.in/"} target="_blank">
+        <Link href={"https://phoenixnsec.in/"} target="blank">
           <Image
             src={logo}
             alt="logo of PHOENIX"
@@ -50,7 +50,7 @@ function Navbar() {
             <li className="md:hidden">
               <Link
                 href={"https://phoenixnsec.in/"}
-                target="_blank"
+                target="blank"
                 className="w-full"
               >
                 <Image
