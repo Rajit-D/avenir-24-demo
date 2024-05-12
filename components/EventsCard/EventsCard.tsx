@@ -17,9 +17,9 @@ const EventsCard = ({
 }) => {
   return (
     <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-1 bg-[#1B1B1E]">
-      <div className="flex flex-col md:h-[320px] justify-around p-6 mx-auto md:max-w-[300px] max-w-[250px] text-center text-white rounded-[22px] shadow xl:p-8">
-        <h3 className="mb-4 text-2xl font-strike text-center">{name}</h3>
-        <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+      <div className="flex flex-col md:h-[350px] justify-around p-6 mx-auto md:max-w-[300px] max-w-[250px] text-center text-white rounded-[22px] shadow xl:p-8">
+        <h3 className="mb-4 text-xl font-strike text-center">{name}</h3>
+        <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400 font-mont">
           {description.slice(0, 80) + "..."}
         </p>
         <div className="flex flex-wrap gap-2 mt-5">
