@@ -56,8 +56,8 @@ export const singleEvents = {
 };
 
 export const singleEventsArray = [
-  "Quantum Quills ",
-  "Infinite Ingenuity ",
+  "Quantum Quills (Content Writing)",
+  "Infinite Ingenuity (Open Mic)",
   "CAD Clash",
   "Insta Click",
   "Reel Revolutionaries",

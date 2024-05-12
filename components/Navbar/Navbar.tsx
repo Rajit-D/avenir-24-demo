@@ -30,7 +30,7 @@ function Navbar() {
         )}
       </div>
       <div className="icon md:flex md:flex-col md:justify-center md:items-center hidden md:w-30 py:2 md:py-3 z-20 relative top-[12px] left-[7%]">
-        <a href="https://phoenixnsec.in/" target="_blank">
+        <Link href="https://phoenixnsec.in/" target="_blank">
           <Image
             src={logo}
             alt="logo of PHOENIX"
@@ -38,7 +38,7 @@ function Navbar() {
             height={10}
             className="pr-8 hover:cursor-pointer"
           />
-        </a>
+        </Link>
       </div>
       <div
         className={`menu flex justify-center items-center fixed top-0 left-0 w-screen md:pt-6 md:w-screen min-h-full md:h-auto md:bg-none md:backdrop-blur-[0px] backdrop-blur-[20px] md:block z-50 ${
@@ -48,7 +48,7 @@ function Navbar() {
         <ul className="flex flex-col mb-[140px] md:mb-[0px] justify-between items-center min-h-full md:flex-row gap-10 py-3 text-[1.4rem] md:text-[.5rem] lg:text-[.9rem] text-white">
           <div className="flex flex-row justify-center items-center h-full">
             <li className="md:hidden">
-              <a
+              <Link
                 href="https://phoenixnsec.in/"
                 target="_blank"
                 className="w-full"
@@ -60,7 +60,7 @@ function Navbar() {
                   height={10}
                   className="hover:cursor-pointer"
                 />
-              </a>
+              </Link>
             </li>
           </div>
           <div className="flex md:flex-row flex-col justify-center items-center md:px-5 relative md:left-[6%] md:top-0 top-6">
