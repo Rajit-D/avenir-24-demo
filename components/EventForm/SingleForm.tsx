@@ -43,17 +43,16 @@ const SingleForm = ({ category }: { category: string }) => {
 
     if (res.status === 200) {
       // alert("Registered successfully");
-      toast("Registered successfully! 🤖",{
+      toast("Registered successfully! 🤖", {
         description: 'We will reach out to you soon! ✅'
       });
       reset();
     }
   };
-  console.log(event);
 
   return (
     <div className="max-w-3xl w-full mx-auto h-[100%] rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black overflow-y-auto">
-      <Toaster/>
+      <Toaster />
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Register for {category} event
       </h2>
@@ -192,7 +191,7 @@ const SingleForm = ({ category }: { category: string }) => {
           />
         </LabelInputContainer>
 
-        <FileUpload setValue={setValue} />
+        {event.price !== 0 && <FileUpload setValue={setValue} />}
 
         <button
           className="text-center flex justify-center items-center bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
