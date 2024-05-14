@@ -83,7 +83,7 @@ export const multipleEventsArray = [
   "Terra Rover",
   "Robo War",
   "COMBO 1 (Robo Soccer, Robo Kombat, Terra Rover)",
-  "eFootball (PES Mobile)",
+  "eFootball (PES Mobile) ",
   "BGMI",
   "Dimensional Discourse (Debate)",
   "Cosmic Conundrum (Quiz)",

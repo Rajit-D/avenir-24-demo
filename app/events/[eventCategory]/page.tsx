@@ -31,6 +31,7 @@ const Page = ({ params }: { params: { eventCategory: string } }) => {
         const response = await axios.get(
           `https://avenir24-backend.vercel.app/api/v1/wing/get-wingDetails/${params.eventCategory.toLowerCase()}`
         );
+        
         setWingDetails(response.data);
         setLoading(false);
       } catch (error) {

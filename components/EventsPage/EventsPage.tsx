@@ -47,15 +47,18 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
       window.open(
         "https://unstop.com/p/innovatrix24-netaji-subhash-engineering-college-980862"
       );
-      else if(eventName=== "Human Ludo"){
-        router.push(`/singleForm/humanLudo`)
-      }
+    else if (eventName === "Human Ludo") {
+      router.push(`/singleForm/humanLudo`)
+    }
+    else if (eventName === "eFootball (PES Mobile) "){
+      router.push(`/singleForm/closed`)
+    }
   };
 
   return (
-    <div className="text-white pt-8 md:pt-0 w-dvw overflow-y-auto md:h-dvh flex justify-center items-between bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">      
+    <div className="text-white pt-8 md:pt-0 w-dvw overflow-y-auto md:h-dvh flex justify-center items-between bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
       <div className="flex items-center md:pt-[99.41px] w-full pb-10 flex-col h-full overflow-y-auto">
-         <h2 className="font-strike text-[35px] mb-[10px] text-center">
+        <h2 className="font-strike text-[35px] mb-[10px] text-center">
           {eventData.eventName}
         </h2>
         <div className="flex justify-center items-center md:flex-row flex-col">
