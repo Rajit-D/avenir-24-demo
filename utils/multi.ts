@@ -45,7 +45,7 @@ export const multipleEvents = {
       name: "Dimensional Discourse",
       min: 1,
       max: 1,
-      price: 200,
+      price: 0,
     },
     {
       name: "Cosmic Conundrum ",
