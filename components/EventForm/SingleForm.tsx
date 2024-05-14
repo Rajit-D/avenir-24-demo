@@ -36,17 +36,30 @@ const SingleForm = ({ category }: { category: string }) => {
 
   // Change any here
   const onsubmit = async (data: TSoloEventSchema) => {
-    const res = await axios.post(
-      `https://avenir24-backend.vercel.app/api/v1/registration/single`,
-      data
-    );
 
-    if (res.status === 200) {
-      // alert("Registered successfully");
-      toast("Registered successfully! 🤖", {
-        description: 'We will reach out to you soon! ✅'
+    if (event.price === 0) {
+      data.payment = "Free";
+    }
+
+    try {
+      const res = await axios.post(
+        `https://avenir24-backend.vercel.app/api/v1/registration/single`,
+        data
+      );
+
+      if (res.status === 200) {
+        // alert("Registered successfully");
+        toast("Registered successfully! 🤖", {
+          description: 'We will reach out to you soon! ✅'
+        });
+        reset();
+      }
+    }
+    catch (err) {
+      console.log(err);
+      toast("Something went wrong! 😔", {
+        description: 'Please try again later! ❌'
       });
-      reset();
     }
   };
 

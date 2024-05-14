@@ -48,17 +48,29 @@ const MultipleForm = ({ category }: { category: string }) => {
       members,
     };
 
-    const res = await axios.post(
-      `https://avenir24-backend.vercel.app/api/v1/registration/multi`,
-      toUpload
-    );
+    if (event.price === 0) {
+      toUpload.payment = "Free";
+    }
 
-    if (res.status === 200) {
-      // alert("Registered successfully");
-      toast("Registered successfully! 🤖", {
-        description: "We will reach out to you soon! ✅",
+    try {
+      const res = await axios.post(
+        `https://avenir24-backend.vercel.app/api/v1/registration/multi`,
+        toUpload
+      );
+
+      if (res.status === 200) {
+        // alert("Registered successfully");
+        toast("Registered successfully! 🤖", {
+          description: "We will reach out to you soon! ✅",
+        });
+        reset();
+      }
+    }
+    catch (err) {
+      console.log(err);
+      toast("Something went wrong! 😔", {
+        description: "Please try again later! ❌",
       });
-      reset();
     }
   };
 
