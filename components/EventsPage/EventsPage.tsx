@@ -42,6 +42,7 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
     if (
       eventName !== "eFootball (PES Mobile)" &&
       eventName !== "BGMI" &&
+      eventName !== "Treasure Hunt" &&
       multipleEventsArray.includes(eventName)
     ) {
       router.push(`/multipleForm/${eventCategory}`);
@@ -53,7 +54,11 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
       );
     else if (eventName === "Human Ludo") {
       router.push(`/singleForm/humanLudo`);
-    } else if (eventName === "eFootball (PES Mobile)" || eventName === "BGMI") {
+    } else if (
+      eventName === "eFootball (PES Mobile)" ||
+      eventName === "BGMI" ||
+      eventName === "Treasure Hunt"
+    ) {
       router.push(`/singleForm/closed`);
     }
   };
