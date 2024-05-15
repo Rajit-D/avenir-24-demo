@@ -11,7 +11,12 @@ const Events = () => {
   return (
     <div className="text-black w-dvw h-auto flex justify-center items-center bg-opacity-20 z-2 backdrop-brightness-100 backdrop-blur-[1.7px]">
       <div className="md:mt-[150px] mt-[80px] flex justify-center items-center flex-col">
-        <Link href={"https://res.cloudinary.com/do3exrhoc/image/upload/v1715793708/Final_Event_Schedule_tokuhh.pdf"} target="blank">
+        <Link
+          href={
+            "https://drive.google.com/file/d/1CkIfVh1FJb6ruwP2SggiXQVNo8X0KCYW/view?usp=drive_link"
+          }
+          target="blank"
+        >
           <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#FF3131,55%,#000103)] bg-[length:200%_100%] px-6 font-bold text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 md:w-[300px] w-[250px] md:mb-0 mb-5 font-mont">
             View the Schedule! 📅
           </button>
