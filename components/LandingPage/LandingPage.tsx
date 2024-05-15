@@ -92,9 +92,9 @@ export default function LandingPage() {
                         {days}
                       </p>
                     )}
-                    <p className="text-red-500 text-center outline-4 relative md:top-[55px] top-[75px] font-strike-light md:tracking-[7px] md:left-[7px] left-[3.5px]">
+                    {/* <p className="text-red-500 text-center outline-4 relative md:top-[55px] top-[75px] font-strike-light md:tracking-[7px] md:left-[7px] left-[3.5px]">
                       until showtime
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>

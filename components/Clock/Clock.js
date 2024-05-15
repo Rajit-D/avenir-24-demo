@@ -1,5 +1,5 @@
 import React from "react";
-import './Clock.css';
+import "./Clock.css";
 
 const Clock = ({ timerDays }) => {
   return (
@@ -8,12 +8,14 @@ const Clock = ({ timerDays }) => {
         <div className="flex p-3">
           <div className="flex justify-center flex-row">
             <p className="alpha text-[40px] md:text-[60px] text-center font-digital">
-              T-&nbsp;
+              {/* T-&nbsp; */}
+              Day 1
             </p>
             <p className="alpha text-[40px] md:text-[60px] text-center font-digital">
-              {timerDays}
+              {/* {timerDays} */}
+              &nbsp;is Live!!
             </p>
-            <div className="alpha text-[40px] md:text-[60px] text-center font-digital">&nbsp;Days</div>
+            {/* <div className="alpha text-[40px] md:text-[60px] text-center font-digital">&nbsp;Days</div> */}
           </div>
         </div>
       </div>
