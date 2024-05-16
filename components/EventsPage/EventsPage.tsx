@@ -47,7 +47,11 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
       multipleEventsArray.includes(eventName)
     ) {
       router.push(`/multipleForm/${eventCategory}`);
-    } else if (singleEventsArray.includes(eventName)) {
+    } else if (
+      eventName !== "STACK OVERFLOW" &&
+      eventName !== "UX FACTOR" &&
+      singleEventsArray.includes(eventName)
+    ) {
       router.push(`/singleForm/${eventCategory}`);
     } else if (eventName === "Innovatrix (Hackathon)")
       window.open(
@@ -59,7 +63,9 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
       eventName === "eFootball (PES Mobile)" ||
       eventName === "BGMI" ||
       eventName === "Treasure Hunt" ||
-      eventName === "Beg! Borrow! Steal!"
+      eventName === "Beg! Borrow! Steal!" ||
+      eventName === "STACK OVERFLOW" ||
+      eventName === "UX FACTOR"
     ) {
       router.push(`/singleForm/closed`);
     }
