@@ -25,7 +25,7 @@ export default function LandingPage() {
   let interval: string | number | NodeJS.Timeout;
 
   const startTimer = () => {
-    const countDownDate = new Date("May 17,2024 ").getTime();
+    const countDownDate = new Date("May 19,2024 ").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
