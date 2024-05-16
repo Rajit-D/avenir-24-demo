@@ -41,6 +41,7 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
     console.log(eventName);
     if (
       eventName !== "eFootball (PES Mobile)" &&
+      eventName !== "Beg! Borrow! Steal!" &&
       eventName !== "BGMI" &&
       eventName !== "Treasure Hunt" &&
       multipleEventsArray.includes(eventName)
@@ -57,7 +58,8 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
     } else if (
       eventName === "eFootball (PES Mobile)" ||
       eventName === "BGMI" ||
-      eventName === "Treasure Hunt"
+      eventName === "Treasure Hunt" ||
+      eventName === "Beg! Borrow! Steal!"
     ) {
       router.push(`/singleForm/closed`);
     }
