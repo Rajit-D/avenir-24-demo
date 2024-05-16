@@ -44,6 +44,7 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
       eventName !== "Beg! Borrow! Steal!" &&
       eventName !== "BGMI" &&
       eventName !== "Treasure Hunt" &&
+      eventName !== "Dimensional Discourse (Debate)" &&
       multipleEventsArray.includes(eventName)
     ) {
       router.push(`/multipleForm/${eventCategory}`);
@@ -65,7 +66,8 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
       eventName === "Treasure Hunt" ||
       eventName === "Beg! Borrow! Steal!" ||
       eventName === "STACK OVERFLOW" ||
-      eventName === "UX FACTOR"
+      eventName === "UX FACTOR" ||
+      eventName === "Dimensional Discourse (Debate)"
     ) {
       router.push(`/singleForm/closed`);
     }
