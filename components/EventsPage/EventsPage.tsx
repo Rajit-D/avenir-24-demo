@@ -40,35 +40,26 @@ const EventsPage = ({ eventData, eventCategory }: Props) => {
   const handleClick = (eventName: any) => {
     console.log(eventName);
     if (
-      eventName !== "eFootball (PES Mobile)" &&
-      eventName !== "Beg! Borrow! Steal!" &&
-      eventName !== "BGMI" &&
-      eventName !== "Treasure Hunt" &&
-      eventName !== "Dimensional Discourse (Debate)" &&
+      // eventName !== "eFootball (PES Mobile)" &&
+      // eventName !== "Beg! Borrow! Steal!" &&
+      // eventName !== "BGMI" &&
+      // eventName !== "Treasure Hunt" &&
+      // eventName !== "Dimensional Discourse (Debate)" &&
       multipleEventsArray.includes(eventName)
     ) {
-      router.push(`/multipleForm/${eventCategory}`);
+      router.push(`/singleForm/closed`);
     } else if (
-      eventName !== "STACK OVERFLOW" &&
-      eventName !== "UX FACTOR" &&
+      // eventName !== "STACK OVERFLOW" &&
+      // eventName !== "UX FACTOR" &&
       singleEventsArray.includes(eventName)
     ) {
-      router.push(`/singleForm/${eventCategory}`);
+      router.push(`/singleForm/closed`);
     } else if (eventName === "Innovatrix (Hackathon)")
-      window.open(
-        "https://unstop.com/p/innovatrix24-netaji-subhash-engineering-college-980862"
-      );
+      // window.open(
+      //   "https://unstop.com/p/innovatrix24-netaji-subhash-engineering-college-980862"
+      // );
+      router.push(`/singleForm/closed`);
     else if (eventName === "Human Ludo") {
-      router.push(`/singleForm/humanLudo`);
-    } else if (
-      eventName === "eFootball (PES Mobile)" ||
-      eventName === "BGMI" ||
-      eventName === "Treasure Hunt" ||
-      eventName === "Beg! Borrow! Steal!" ||
-      eventName === "STACK OVERFLOW" ||
-      eventName === "UX FACTOR" ||
-      eventName === "Dimensional Discourse (Debate)"
-    ) {
       router.push(`/singleForm/closed`);
     }
   };

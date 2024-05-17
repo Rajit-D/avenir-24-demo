@@ -9,7 +9,7 @@ const Clock = ({ timerDays }) => {
           <div className="flex justify-center flex-row">
             <p className="alpha text-[40px] md:text-[60px] text-center font-digital">
               {/* T-&nbsp; */}
-              Day 2
+              Day 3
             </p>
             <p className="alpha text-[40px] md:text-[60px] text-center font-digital">
               {/* {timerDays} */}
