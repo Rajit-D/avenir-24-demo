@@ -25,7 +25,7 @@ export default function LandingPage() {
   let interval: string | number | NodeJS.Timeout;
 
   const startTimer = () => {
-    const countDownDate = new Date("May 19,2024 ").getTime();
+    const countDownDate = new Date("May 19,2025 ").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -79,7 +79,7 @@ export default function LandingPage() {
                         className="md:w-[100px] md:h-[120px] h-[50px] w-[45px]"
                       />
                       <h1 className="md:text-[7em] text-[3em] ml-2 font-star-wars  text-[#cdcbca]">
-                        ENIR&apos;24
+                        ENIR&apos;25
                       </h1>
                     </div>
                     <TextGenerateEffect words={words} />
